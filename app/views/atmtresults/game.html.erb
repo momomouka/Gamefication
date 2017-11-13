@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <title><%= @page_title %></title>
+</head>
+
+<body>
+<h2>ATMT タスク</h2>
+<p><a id="start" href="javascript:void(0)">スタート</a></p>
+
+<% @page_title = "会員の詳細" %>
+
+<script>
+  $(function () {
+    $('#start').click(function () {
+      $('#start').hide();
+      $('.menubar').hide();
+
+      {
+        var NUM = 10; // ボタン数
+        var buttonNum = 1; //ボタンに数字を割り振る為の（無駄な変数）
+        var buttonCount = 1; // ボタンに数字を割り振る為の変数と押したボタンの数管理
+        var idname; //押されたボタンをif文判定する為に使う
+        var SIZE = 300; // ステージの大きさ
+        var count = 0; // 現在チェックされている数
+        var st = new Date().getTime(); // 開始時間
+        var t = (new Date().getTime() - st) / 1000;
+        var newX;
+        var newY;
+        var oldX;
+        var oldY;
+        var check;
+        <% score = 0 %>
+      } // 変数宣言
+
+      function newPos() {
+        return {
+          left: Math.floor(Math.random() * SIZE),
+          top: Math.floor(Math.random() * SIZE) + 40
+        };
+      } // ボタンの新しい位置を返す。
+
+      function Position() {
+        do {
+          check = 0;
+          newX = Math.floor(Math.random() * SIZE);
+          newY = Math.floor(Math.random() * SIZE) + 40;
+          $('.button').each(function () {
+            oldX = $(this).offset().left;
+            oldY = $(this).offset().top;
+            if (((newX + 15 < oldX + 60) && (newY + 15 < oldY + 60)) && ((newX + 15 > oldX - 30) &&
+                    (newY + 15 > oldY - 30))) {
+              check = 0;
+              return false;
+            } else {
+              check = 1;
+            }
+          });
+        } while (check == 0);
+        return {
+          left: newX,
+          top: newY
+        };
+      }
+
+      $('<input type="button">').val(buttonNum).attr("id", buttonNum).addClass("button")
+          .css({
+            'width': '30px',
+            'height': '30px'
+          })
+          .appendTo('body')
+          .css('position', 'absolute')
+          .css(newPos());
+      for (var i = 1; i < NUM; i++) {
+        buttonNum = i + 1;
+        $('<input type="button">').val(buttonNum).attr("id", buttonNum).addClass("button")
+            .css({
+              'width': '30px',
+              'height': '30px'
+            })
+            .appendTo('body')
+            .css('position', 'absolute')
+            .css(Position());
+      } // ボタンの生成
+
+      $('input').click(function () {
+        idname = $(this).attr("id");
+        if (buttonCount == idname) {
+          $('<input type="button">').val(buttonCount + NUM).attr("id", buttonCount + NUM).addClass("button")
+              .css({
+                'width': '30px',
+                'height': '30px'
+              })
+              .appendTo('body')
+              .css('position', 'absolute')
+              .css(Position());
+          buttonCount = buttonCount + 1;
+          buttonNum = buttonNum + 1;
+          $(this).remove();
+        }
+      }); // ボタンが押されたときの処理
+
+      // 設定した時間を超過したら強制終了する処理
+
+
+      setTimeout(function () {
+        buttonCount = buttonCount - 1; // 生数字だとクリック数盛られちゃう
+        alert(buttonCount + "個クリックできました！");
+        $('.button').hide();
+        $('p').show();
+        $('<%= link_to 'タスクが完了しました。こちらをクリックしてください。', '/atmtresults/create',method: :post %>')
+            .appendTo("body");
+        $.ajax({
+          url: '/atmtresults/score_get',
+          type: 'GET',
+          data: {"atmtscore": buttonCount},
+          success: function (data) {
+            console.log(buttonCount);
+          },
+          error: function (data) {
+            console.log("XMLHttpRequest : " + XMLHttpRequest.status);
+            console.log("textStatus     : " + textStatus);
+            console.log("errorThrown    : " + errorThrown.message);
+          }
+        })
+      }, 5000); // ミリ秒 000を取り除いた数字秒で打ち切り
+      return false;
+    });
+  });
+
+</script>
+
+</body>
+
+</html>

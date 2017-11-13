@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <title><%= page_title %></title>
+
+</head>
+<body>
+  <h2>計算 タスク</h2>
+  <p><a id="start" href="javascript:void(0)">スタート</a></p>
+<!--  <div class="math"></div>-->
+  <p id="text"></p>
+    <script>
+  $(function() {
+  $('#start').click(function() {
+    $('#start').hide();
+    $('.menubar').hide();
+    
+    {var trueAnswer; //正答
+    var userAnswer; //回答
+    var numL; //左の項
+    var numR; //右の項
+    var questionNum = 0; //問題数
+    var trueCount = 0; //正答数
+    var time; //
+    } // 変数宣言
+    
+    function QuestionCreate() {
+      do {
+        numL = Math.floor(Math.random() * 100 ) + 1;
+        numR = Math.floor(Math.random() * 100 ) + 1;
+        trueAnswer = numL + numR;  
+      } while (trueAnswer >= 100);
+      questionNum = questionNum + 1;
+    }; // 問題となるnumL,numRと答えtrueAnswerを生成する
+    
+    function Judge(){
+      userAnswer = $("#usertext").val();
+      if(trueAnswer == userAnswer) {
+//        alert("優勝！！");
+        trueCount = trueCount + 1;
+      } else {
+//        alert("は？");
+      }
+      
+
+      
+      $("#usertext").val("");
+      QuestionCreate();
+      $("#text").text(numL + " + " + numR)
+        .css('font-size','30px');
+      
+    } // 正誤判定と後処理
+    
+    {
+    QuestionCreate(); //　下三行初期設定
+    $("#text").text(numL + " + " + numR).addClass("math")
+      .css('font-size','30px');
+    } // セットアップ
+    
+    $('<input type="text" id="usertext" value="" class="math">') // テキストフィールド
+      .appendTo('body');
+    $(document).ready(function(){
+    var dColor = '#999999';    //ヒント（初期値）の文字色
+    var fColor = '#000000';    //通常入力時の文字色
+    var dValue = ' 回答を入力';    //ヒント（初期値）文字列
+
+    //初期状態設定
+    if($('#usertext').val() == "" || $('#usertext').val() == dValue){
+        $('#usertext').val(dValue);
+        $('#usertext').css('color',dColor);
+    }
+
+    //フォーカスされたときの処理
+    $('#usertext').focus(function(){
+        if($(this).val() == dValue){
+            $(this).val('');
+            $(this).css('color', fColor);
+        }
+    })
+    //フォーカスが外れたときの処理
+    .blur(function(){
+        if($(this).val() == dValue || $(this).val() == ''){
+            $(this).val(dValue);
+            $(this).css('color',dColor);
+        };
+    });
+  }); // アクティブになったらテキストフィールドの文字を消すやつ
+    
+    $('<input type="button" id="userbutton" value="回答する" class="math">') // 回答ボタン
+      .css({'width':'80px', 'height':'25px'})
+      .appendTo('body');
+    
+    $('#userbutton').click(function(){
+      Judge();
+    }); // 回答ボタン押したら正誤判定する
+    
+    $("#usertext").keypress(function(event){
+      if(event.keyCode == 13){
+        Judge();
+        return false;
+      }
+    }); // エンターでも正誤判定するようにする
+
+    setTimeout(function(){
+      $(".math").hide();
+      $('<%= link_to "タスクが完了しました。こちらをクリックしてください。", '/mathresults/create',method: :post %>')
+          .appendTo("body");
+      $.ajax({
+        url: '/mathresults/score_get',
+        type: 'GET',
+        data: {"mathscore": trueCount},
+        success: function (data) {
+          console.log(buttonCount);
+        },
+        error: function (data) {
+          console.log("XMLHttpRequest : " + XMLHttpRequest.status);
+          console.log("textStatus     : " + textStatus);
+          console.log("errorThrown    : " + errorThrown.message);
+        }
+      })
+    },5000);// 終了判定
+
+    
+  return false;
+  });
+  });
+    
+  </script>
+</body>
+</html>

@@ -1,0 +1,2 @@
+module ClickresultsHelper
+end

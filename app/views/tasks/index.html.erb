@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+    <meta charset="UTF-8">
+    <title><%= page_title %></title>
+	 <meta name="Author" content=""/>
+	 <link rel="stylesheet" type="text/css" href="style.css">
+  <script> 
+  </script>
+</head>
+<body>
+  <% page_title="タスク" %>
+  <h2>タスクの一覧</h2>
+  <%=  @now_member_id %>
+<ul>
+  <li>  <%= menu_link_to "ATMT課題", '/atmtresults/index' %> </li>
+  <li>  <%= menu_link_to "暗算課題", '/mathresults/index' %></li>
+  <li>  <%= menu_link_to "クリック課題", '/clickresults/index' %></li>
+</ul>
+</body>
+</html>

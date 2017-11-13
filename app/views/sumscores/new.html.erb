@@ -1,0 +1,7 @@
+<script>$('.menubar').hide();</script>
+
+<% if Sumscore.exists?(member_id:@current_member) %>
+    <%= link_to 'こちらをクリックしてください', '/sumscores',method: :patch %>
+<% else %>
+    <%= link_to 'こちらをクリックしてください', '/sumscores',method: :post %>
+<% end %>

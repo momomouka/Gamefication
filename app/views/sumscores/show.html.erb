@@ -1,0 +1,19 @@
+<br>
+<br>
+<table>
+  <tr>
+    <th>ID</th>
+    <th>Name</th>
+  </tr>
+<% @rank.each do |rank| %>
+    <% member = Member.find_by(id: rank.member_id) %>
+    <tr>
+      <td><%= rank.member_id %></td>
+      <td><%= member.name %></td>
+      <td><%= rank.atmt %></td>
+      <td><%= rank.math %></td>
+      <td><%= rank.click %></td>
+    </tr>
+<% end %>
+</table>
+

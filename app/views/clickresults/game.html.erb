@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<title>チェックボックスたたき</title>
+<script>
+$(function() {
+  $('#start').click(function() {
+    $('#start').hide();
+    $('.menubar').hide();
+    
+    {
+    var NUM = 3;                    // チェックボックス数
+    var SIZE = 300;                 // ステージの大きさ
+    var count = 0;                  // 現在チェックされている数
+    var st = new Date().getTime();  // 開始時間
+    } // 変数宣言
+
+    
+    function newPos() {
+      return {
+        left: Math.floor(Math.random() * SIZE),
+        top: Math.floor(Math.random() * SIZE) + 60
+      };
+    }  // チェックボックスの新しい位置を返す。
+    
+    for (var i = 0; i < NUM; i++) {
+      $('<input type="button">').addClass("box")
+      .css({'width': '20px','height': '20px'})
+      .appendTo('body')
+      .css('position', 'absolute')
+      .css(newPos())
+      .each(function() {
+        $(this).animate(newPos(), 3000, arguments.callee);
+      });
+    }  // チェックボックスの生成・アニメーションの設定
+    
+    $('.box').click(function() {
+      $(this).remove();
+      count++;
+      $('<input type="button">').addClass("box")
+        .css({'width': '20px','height': '20px'})
+        .appendTo('body')
+        .css('position', 'absolute')
+        .css(newPos())
+        .each(function() {
+        $(this).animate(newPos(), 3000, arguments.callee);
+      });
+    });// チェックボックスが押されたときの処理
+
+    setTimeout(function() {
+      $('.box').hide();
+      $('<%= link_to "タスクが完了しました。こちらをクリックしてください。", '/clickresults/create',method: :post %>')
+          .appendTo("body");
+      $.ajax({
+        url: '/clickresults/score_get',
+        type: 'GET',
+        data: {"clickscore": count},
+        success: function (data) {
+          console.log(buttonCount);
+        },
+        error: function (data) {
+          console.log("XMLHttpRequest : " + XMLHttpRequest.status);
+          console.log("textStatus     : " + textStatus);
+          console.log("errorThrown    : " + errorThrown.message);
+        }
+      })
+    },5000);
+    return false;
+  });
+});
+</script>
+</head>
+<body>
+  <h2>クリック タスク</h2>
+  <p><a id="start" href="javascript:void(0)">スタート</a></p>
+</body>
+</html>

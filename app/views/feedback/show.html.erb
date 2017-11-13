@@ -1,0 +1,70 @@
+<h2><%= @current_member.name %> さんの実験フィードバック</h2>
+
+<% atmtscore = 0 %>
+<% mathscore = 0 %>
+<% clickscore = 0 %>
+
+<% if @atmtresults.present? %>
+<table class="list">
+  <tr>
+    <th>ID</th>
+    <th>Member ID</th>
+    <th>Result</th>
+  </tr>
+
+  <% @atmtresults.each do |member| %>
+  <tr>
+    <td><%= member.id %></td>
+    <td><%= member.member_id %></td>
+    <td><%= member.atmtTaskResult %></td>
+  </tr>
+      <% atmtscore = atmtscore + member.atmtTaskResult %>
+  <% end %>
+</table>
+<% else %>
+<p>会員情報がありません。</p>
+<% end %>
+
+<% if @mathresults.present? %>
+    <table class="list">
+      <tr>
+        <th>ID</th>
+        <th>Member ID</th>
+        <th>Result</th>
+      </tr>
+      <% @mathresults.each do |member| %>
+          <tr>
+            <td><%= member.id %></td>
+            <td><%= member.member_id %></td>
+            <td><%= member.mathTaskResult %></td>
+          </tr>
+          <% mathscore = mathscore + member.mathTaskResult %>
+      <% end %>
+    </table>
+<% else %>
+    <p>会員情報がありません。</p>
+<% end %>
+
+<% if @clickresults.present? %>
+    <table class="list">
+      <tr>
+        <th>ID</th>
+        <th>Member ID</th>
+        <th>Result</th>
+      </tr>
+      <% @clickresults.each do |member| %>
+          <tr>
+            <td><%= member.id %></td>
+            <td><%= member.member_id %></td>
+            <td><%= member.clickTaskResult %></td>
+          </tr>
+          <% clickscore = clickscore + member.clickTaskResult %>
+      <% end %>
+    </table>
+<% else %>
+    <p>会員情報がありません。</p>
+<% end %>
+
+<P><%= atmtscore %></P>
+<p><%= mathscore %></p>
+<p><%= clickscore %></p>

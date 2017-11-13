@@ -1,0 +1,87 @@
+<% @page_title = "実験協力情報の編集" %>
+
+<h1><%= @page_title %></h1>
+
+<p><%= link_to "実験協力者の詳細に戻る", @member %></p>
+
+<%= form_for @member do |form| %>
+<table class="attr">
+  <tr>
+    <th><%= form.label :name, "氏名" %></th>
+    <td><%= form.text_field :name %></td>
+  </tr>
+  <tr>
+    <th>性別</th>
+    <td>
+      <%= form.radio_button :gender, 0 %>
+      <%= form.label :gender_0, "男" %>
+      <%= form.radio_button :gender, 1 %>
+      <%= form.label :gender_1, "女" %>
+    </td>
+  </tr>
+  <tr>
+    <th><%= form.label :birthday, "誕生日", for: "member_birthday_1i" %></th>
+    <td><%= form.date_select :birthday, start_year: 1940, end_year: Time.now.year, use_month_numbers: true %></td>
+  </tr>
+  <tr>
+    <th><%= form.label :email, "メールアドレス" %></th>
+    <td><%= form.email_field :email %></td>
+  </tr>
+  <tr>
+  <tr>
+    <th><%= form.label :passname, "ログインID" %></th>
+    <td><%= form.text_field :passname %></td>
+  </tr>
+  <tr>
+    <th><%= form.label :password, "パスワード" %></th>
+    <td><%= form.text_field :password %></td>
+  </tr>
+  <tr>
+    <th><%= form.label :password_confirmation, "パスワードの確認" %></th>
+    <td><%= form.text_field :password_confirmation %></td>
+  </tr>
+  <tr>
+    <th><%= form.label :tasktype, "タスクタイプ" %></th>
+    <td>
+      <%= form.radio_button :tasktype, 0 %>
+      <%= form.label :tasktype_0, "無分類" %>
+      <%= form.radio_button :tasktype, 1 %>
+      <%= form.label :tasktype_1, "ATMT" %>
+      <%= form.radio_button :tasktype, 2 %>
+      <%= form.label :tasktype_2, "MATH" %>
+      <%= form.radio_button :tasktype, 3 %>
+      <%= form.label :tasktype_3, "CLICK" %>
+    </td>
+  </tr>
+  <tr>
+    <th><%= form.label :gametype, "ゲームタイプ" %></th>
+    <td>
+      <%= form.radio_button :gametype, 0 %>
+      <%= form.label :gametype_0, "無分類" %>
+      <%= form.radio_button :gametype, 1 %>
+      <%= form.label :gametype_1, "なし" %>
+      <%= form.radio_button :gametype, 2 %>
+      <%= form.label :gametype_2, "ランキング" %>
+      <%= form.radio_button :gametype, 3 %>
+      <%= form.label :gametype_3, "実績" %>
+    </td>
+  </tr>
+  <tr>
+    <th><%= form.label :membertype, "被験者タイプ" %></th>
+    <td>
+      <%= form.radio_button :membertype, 0 %>
+      <%= form.label :membertype_0, "無分類" %>
+      <%= form.radio_button :membertype, 1 %>
+      <%= form.label :membertype_1, "合致群" %>
+      <%= form.radio_button :membertype, 2 %>
+      <%= form.label :membertype_2, "非合致群" %>
+      <%= form.radio_button :membertype, 3 %>
+      <%= form.label :membertype_3, "無関心群" %>
+    </td>
+  </tr>
+</table>
+<% unless @member.new_record? %>
+<p>パスワードを変更しないときは、パスワード入力欄を空にしてください。</p>
+<% end %>
+  <p><%= form.submit %></p>
+<% end %>

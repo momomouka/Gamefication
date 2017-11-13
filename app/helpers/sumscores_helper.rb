@@ -1,0 +1,2 @@
+module SumscoresHelper
+end
