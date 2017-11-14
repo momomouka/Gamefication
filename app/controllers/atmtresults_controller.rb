@@ -1,6 +1,6 @@
 class AtmtresultsController < ApplicationController
   before_action :login_check
-  
+
   def login_check
     if @current_member.id == nil
       flash[:notice] = "各種課題をやる為には、ログインが必要です"

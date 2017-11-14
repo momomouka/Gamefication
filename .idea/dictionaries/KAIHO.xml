@@ -11,14 +11,17 @@
       <w>clickscore</w>
       <w>clicksum</w>
       <w>gametype</w>
+      <w>highscore</w>
       <w>mathresult</w>
       <w>mathresults</w>
       <w>mathscore</w>
       <w>mathsum</w>
       <w>membertype</w>
+      <w>pagemove</w>
       <w>passname</w>
       <w>sumscore</w>
       <w>sumscores</w>
+      <w>taskcount</w>
       <w>taskresult</w>
       <w>tasktype</w>
     </words>

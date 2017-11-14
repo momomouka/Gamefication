@@ -1,21 +1,25 @@
-<!DOCTYPE html>
-<html lang="">
-<head>
-    <meta charset="UTF-8">
-    <title><%= page_title %></title>
-	 <meta name="Author" content=""/>
-	 <link rel="stylesheet" type="text/css" href="style.css">
-  <script> 
-  </script>
-</head>
-<body>
-  <% page_title="タスク" %>
-  <h2>タスクの一覧</h2>
-  <%=  @now_member_id %>
-<ul>
-  <li>  <%= menu_link_to "ATMT課題", '/atmtresults/index' %> </li>
-  <li>  <%= menu_link_to "暗算課題", '/mathresults/index' %></li>
-  <li>  <%= menu_link_to "クリック課題", '/clickresults/index' %></li>
-</ul>
-</body>
-</html>
+<% case @current_member.tasktype %>
+<% when 0 then %>
+		<p>タスク着手条件を満たしていません。</p>
+		<p>実験期間になるまでお待ちください。</p>
+		<br>
+		<p>なお、実験期間中にこの画面が表示された場合は、管理者までご連絡ください。</p>
+<% when 1 then %>
+		<h2>ATMT課題</h2>
+		<p><%= link_to "タスクを始める", '/atmtresults/game' %></p>
+<% when 2 then %>
+		<h2>MATH課題</h2>
+		<p><%= link_to "タスクを始める", '/mathresults/game' %></p>
+<% when 3 then %>
+		<h2>CLICK課題</h2>
+		<p><%= link_to "タスクを始める", '/clickresults/game' %></p>
+<% when 4 then %>
+		<% page_title="タスク" %>
+		<ul>
+			<li>  <%= menu_link_to "ATMT課題", '/atmtresults/index' %> </li>
+			<li>  <%= menu_link_to "暗算課題", '/mathresults/index' %></li>
+			<li>  <%= menu_link_to "クリック課題", '/clickresults/index' %></li>
+		</ul>
+<% end %>
+
+<% @page_title = "タスク" %>

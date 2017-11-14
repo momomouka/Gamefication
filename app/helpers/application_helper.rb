@@ -1,6 +1,6 @@
 module ApplicationHelper
 def page_title #ページタイトル管理
-		title = "海保の実験ページ"
+		title = "海保の実験サイト"
 		title = @page_title + " - " + title if @page_title
 		title
 end
@@ -28,8 +28,6 @@ def log_out
   @current_member = nil
 end
 
-def result_get
 
-end
-  
+
 end

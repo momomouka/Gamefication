@@ -50,7 +50,9 @@
       <%= form.radio_button :tasktype, 2 %>
       <%= form.label :tasktype_2, "MATH" %>
       <%= form.radio_button :tasktype, 3 %>
-      <%= form.label :tasktype_3, "CLICK" %>
+			<%= form.label :tasktype_3, "CLICK" %>
+			<%= form.radio_button :tasktype, 4 %>
+			<%= form.label :tasktype_4, "ALL" %>
     </td>
   </tr>
   <tr>
@@ -64,6 +66,8 @@
       <%= form.label :gametype_2, "ランキング" %>
       <%= form.radio_button :gametype, 3 %>
       <%= form.label :gametype_3, "実績" %>
+			<%= form.radio_button :gametype, 4 %>
+			<%= form.label :gametype_4, "ALL" %>
     </td>
   </tr>
   <tr>
@@ -77,6 +81,8 @@
       <%= form.label :membertype_2, "非合致群" %>
       <%= form.radio_button :membertype, 3 %>
       <%= form.label :membertype_3, "無関心群" %>
+			<%= form.radio_button :membertype, 4 %>
+			<%= form.label :membertype_4, "ALL" %>
     </td>
   </tr>
 </table>

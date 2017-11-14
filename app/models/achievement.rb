@@ -1,3 +1,3 @@
 class Achievement < ApplicationRecord
-  belongs_to :member
+  has_many :member_achieves, :through => :member_achieves
 end

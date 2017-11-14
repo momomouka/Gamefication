@@ -10,16 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171110043136) do
+ActiveRecord::Schema.define(version: 20171113071933) do
 
   create_table "achievements", force: :cascade do |t|
-    t.integer "member_id"
     t.integer "number"
     t.text "title"
+    t.text "explain"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["member_id", "created_at"], name: "index_achievements_on_member_id_and_created_at"
-    t.index ["member_id"], name: "index_achievements_on_member_id"
   end
 
   create_table "atmtresults", force: :cascade do |t|
@@ -47,6 +45,15 @@ ActiveRecord::Schema.define(version: 20171110043136) do
     t.datetime "updated_at", null: false
     t.index ["member_id", "created_at"], name: "index_mathresults_on_member_id_and_created_at"
     t.index ["member_id"], name: "index_mathresults_on_member_id"
+  end
+
+  create_table "member_achieves", force: :cascade do |t|
+    t.integer "member_id"
+    t.integer "achievement_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["achievement_id"], name: "index_member_achieves_on_achievement_id"
+    t.index ["member_id"], name: "index_member_achieves_on_member_id"
   end
 
   create_table "members", force: :cascade do |t|

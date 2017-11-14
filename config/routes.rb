@@ -24,8 +24,10 @@ Rails.application.routes.draw do
   delete '/logout',  to: 'sessions#destroy'
 
   get 'tasks/index'
+  get 'rankings/index'
 
 	root to: "top#index"
+  get 'top/about'
 
   resources :members do
   	collection { get "search" }
@@ -33,5 +35,6 @@ Rails.application.routes.draw do
 
   resource :account, only: [:show, :edit, :update]
   resource :sumscores, only: [:show, :new, :create, :update]
+	resource :achievements, only: [:show, :new, :create]
 
 end

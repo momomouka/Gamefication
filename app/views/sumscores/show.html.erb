@@ -1,19 +1,6 @@
-<br>
-<br>
-<table>
-  <tr>
-    <th>ID</th>
-    <th>Name</th>
-  </tr>
-<% @rank.each do |rank| %>
-    <% member = Member.find_by(id: rank.member_id) %>
-    <tr>
-      <td><%= rank.member_id %></td>
-      <td><%= member.name %></td>
-      <td><%= rank.atmt %></td>
-      <td><%= rank.math %></td>
-      <td><%= rank.click %></td>
-    </tr>
-<% end %>
-</table>
+<% @page_title = フィードバック %>
 
+<p>フィードバック表示条件を満たしていません。</p>
+<p>実験期間になるまでお待ちください。</p>
+<br>
+<p>なお、実験期間中にこの画面が表示された場合は、管理者までご連絡ください。</p>

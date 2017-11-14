@@ -1,0 +1,52 @@
+<% @page_title = "ランキング" %>
+
+<h2>ATMT Ranking</h2>
+<table>
+  <tr>
+    <th>ID</th>
+    <th>Name</th>
+    <th>Result</th>
+  </tr>
+  <% @rank_atmt.each do |rank| %>
+      <% member = Member.find_by(id: rank.member_id) %>
+      <tr>
+        <td><%= rank.member_id %></td>
+        <td><%= member.name %></td>
+        <td><%= rank.atmt %></td>
+      </tr>
+  <% end %>
+</table>
+<br>
+<h2>MATH Ranking</h2>
+<table>
+  <tr>
+    <th>ID</th>
+    <th>Name</th>
+    <th>Result</th>
+  </tr>
+  <% @rank_math.each do |rank| %>
+      <% member = Member.find_by(id: rank.member_id) %>
+      <tr>
+        <td><%= rank.member_id %></td>
+        <td><%= member.name %></td>
+        <td><%= rank.math %></td>
+      </tr>
+  <% end %>
+</table>
+<br>
+<h2>CLICK Ranking</h2>
+<table>
+  <tr>
+    <th>ID</th>
+    <th>Name</th>
+    <th>Result</th>
+  </tr>
+  <% @rank_click.each do |rank| %>
+      <% member = Member.find_by(id: rank.member_id) %>
+      <tr>
+        <td><%= rank.member_id %></td>
+        <td><%= member.name %></td>
+        <td><%= rank.click %></td>
+      </tr>
+  <% end %>
+</table>

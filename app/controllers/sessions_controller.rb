@@ -7,7 +7,7 @@ class SessionsController < ApplicationController
     member = Member.find_by(passname: params[:session][:passname])
     if member && member.authenticate(params[:session][:password])
       log_in member
-      redirect_to member
+      redirect_to root_path
     else
       flash.now[:danger] = 'ログインIDとパスワードが一致しませんでした。'
       render 'new'
