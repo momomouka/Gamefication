@@ -66,8 +66,6 @@ group :test do
   gem 'factory_girl_rails'
 end
 
-gem 'devise'
-
   gem 'pry-rails'
   gem 'pry-byebug'
   gem 'pry-doc'
