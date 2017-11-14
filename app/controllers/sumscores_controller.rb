@@ -22,15 +22,15 @@ class SumscoresController < ApplicationController
 		$clicksum = 0
 
 		@atmtresults.each do |member|
-			$atmtsum = $atmtsum + member.atmtTaskResult
+			$atmtsum += member.atmtTaskResult
 		end
 
 		@mathresults.each do |member|
-			$mathsum = $mathsum + member.mathTaskResult
+			$mathsum += member.mathTaskResult
 		end
 
 		@clickresults.each do |member|
-			$clicksum = $clicksum + member.clickTaskResult
+			$clicksum += member.clickTaskResult
 		end
 	end
 
