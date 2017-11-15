@@ -12,8 +12,9 @@ $(function() {
     $('.menubar').hide();
     
     {
-    var NUM = 5;                    // チェックボックス数
-    var SIZE = 300;                 // ステージの大きさ
+    var NUM = 3;                    // チェックボックス数
+    var SIZE = 400;                 // ステージの大きさ
+    var speed = 3000;
     var count = 0;                  // 現在チェックされている数
     var st = new Date().getTime();  // 開始時間
     } // 変数宣言
@@ -67,7 +68,7 @@ $(function() {
           console.log("errorThrown    : " + errorThrown.message);
         }
       })
-    },5000);
+    },60000);
     return false;
   });
 });

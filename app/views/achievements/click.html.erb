@@ -1,0 +1,166 @@
+<% @page_title = "実績" %>
+
+<h2>実績</h2>
+
+<% if Clickresult.where(member_id: @current_member.id).exists? %>
+    <table>
+      <tr>
+        <th>ID</th>
+        <th>タイトル</th>
+        <th>取得条件</th>
+      </tr>
+      <tr>
+        <th>1</th>
+        <% if MemberAchieve.exists?(member_id: @current_member.id, achievement_id: 21) %>
+            <% @achi = Achievement.find(21) %>
+            <th><%= @achi.title %></th>
+            <th><%= @achi.explain %></th>
+        <% else %>
+            <th><%= "未達成" %></th>
+            <th><%= "???" %></th>
+            <% if @highscore_click >= 0 then %>
+                <th><%= link_to '獲得', achievements_path(:id => 21),:method => :post %></th>
+            <% end %>
+        <% end %>
+      </tr>
+
+      <tr>
+        <th>2</th>
+        <% if MemberAchieve.exists?(member_id: @current_member.id, achievement_id: 22) %>
+            <% @achi = Achievement.find(22) %>
+            <th><%= @achi.title %></th>
+            <th><%= @achi.explain %></th>
+        <% else %>
+            <th><%= "未達成" %></th>
+            <th><%= "???" %></th>
+            <% if @highscore_click >= 20 then %>
+                <th><%= link_to '獲得', achievements_path(:id => 22),:method => :post %></th>
+            <% end %>
+        <% end %>
+      </tr>
+
+      <tr>
+        <th>3</th>
+        <% if MemberAchieve.exists?(member_id: @current_member.id, achievement_id: 23) %>
+            <% @achi = Achievement.find(23) %>
+            <th><%= @achi.title %></th>
+            <th><%= @achi.explain %></th>
+        <% else %>
+            <th><%= "未達成" %></th>
+            <th><%= "???" %></th>
+            <% if @highscore_click >= 35 then %>
+                <th><%= link_to '獲得', achievements_path(:id => 23),:method => :post %></th>
+            <% end %>
+        <% end %>
+      </tr>
+
+      <tr>
+        <th>4</th>
+        <% if MemberAchieve.exists?(member_id: @current_member.id, achievement_id: 24) %>
+            <% @achi = Achievement.find(24) %>
+            <th><%= @achi.title %></th>
+            <th><%= @achi.explain %></th>
+        <% else %>
+            <th><%= "未達成" %></th>
+            <th><%= "???" %></th>
+            <% if @highscore_click >= 50 then %>
+                <th><%= link_to '獲得', achievements_path(:id => 24),:method => :post %></th>
+            <% end %>
+        <% end %>
+      </tr>
+
+      <tr>
+        <th>5</th>
+        <% if MemberAchieve.exists?(member_id: @current_member.id, achievement_id: 25) %>
+            <% @achi = Achievement.find(25) %>
+            <th><%= @achi.title %></th>
+            <th><%= @achi.explain %></th>
+        <% else %>
+            <th><%= "未達成" %></th>
+            <th><%= "???" %></th>
+            <% if @sumscore.click >= 150 then %>
+                <th><%= link_to '獲得', achievements_path(:id => 25),:method => :post %></th>
+            <% end %>
+        <% end %>
+      </tr>
+
+      <tr>
+        <th>6</th>
+        <% if MemberAchieve.exists?(member_id: @current_member.id, achievement_id: 26) %>
+            <% @achi = Achievement.find(26) %>
+            <th><%= @achi.title %></th>
+            <th><%= @achi.explain %></th>
+        <% else %>
+            <th><%= "未達成" %></th>
+            <th><%= "???" %></th>
+            <% if @sumscore.click >= 300 then %>
+                <th><%= link_to '獲得', achievements_path(:id => 26),:method => :post %></th>
+            <% end %>
+        <% end %>
+      </tr>
+
+      <tr>
+        <th>7</th>
+        <% if MemberAchieve.exists?(member_id: @current_member.id, achievement_id: 27) %>
+            <% @achi = Achievement.find(27) %>
+            <th><%= @achi.title %></th>
+            <th><%= @achi.explain %></th>
+        <% else %>
+            <th><%= "未達成" %></th>
+            <th><%= "???" %></th>
+            <% if @sumscore.click >= 600 then %>
+                <th><%= link_to '獲得', achievements_path(:id => 27),:method => :post %></th>
+            <% end %>
+        <% end %>
+      </tr>
+
+      <tr>
+        <th>8</th>
+        <% if MemberAchieve.exists?(member_id: @current_member.id, achievement_id: 28) %>
+            <% @achi = Achievement.find(28) %>
+            <th><%= @achi.title %></th>
+            <th><%= @achi.explain %></th>
+        <% else %>
+            <th><%= "未達成" %></th>
+            <th><%= "???" %></th>
+            <% if @taskcount_click >= 7 then %>
+                <th><%= link_to '獲得', achievements_path(:id => 28),:method => :post %></th>
+            <% end %>
+        <% end %>
+      </tr>
+
+      <tr>
+        <th>9</th>
+        <% if MemberAchieve.exists?(member_id: @current_member.id, achievement_id: 29) %>
+            <% @achi = Achievement.find(29) %>
+            <th><%= @achi.title %></th>
+            <th><%= @achi.explain %></th>
+        <% else %>
+            <th><%= "未達成" %></th>
+            <th><%= "???" %></th>
+            <% if @lowscore_click <= 15 then %>
+                <th><%= link_to '獲得', achievements_path(:id => 29),:method => :post %></th>
+            <% end %>
+        <% end %>
+      </tr>
+
+      <tr>
+        <th>10</th>
+        <% if MemberAchieve.exists?(member_id: @current_member.id, achievement_id: 30) %>
+            <% @achi = Achievement.find(30) %>
+            <th><%= @achi.title %></th>
+            <th><%= @achi.explain %></th>
+        <% else %>
+            <th><%= "未達成" %></th>
+            <th><%= "???" %></th>
+            <% if MemberAchieve.where(member_id: @current_member).count == 10 then %>
+                <th><%= link_to '獲得', achievements_path(:id => 30),:method => :post %></th>
+            <% end %>
+        <% end %>
+      </tr>
+
+    </table>
+
+<% else %>
+    <p>タスクを一度行う事で、実績を確認できるようになります。</p>
+<% end %>

@@ -1,0 +1,21 @@
+<% @page_title = "ランキング" %>
+
+<h2>クリックタスク ランキング</h2>
+<table>
+  <tr>
+    <th>ID</th>
+    <th>ニックネーム</th>
+    <th>スコア</th>
+    <th>1回での最高点</th>
+  </tr>
+  <% @rank_click.each do |rank| %>
+      <% member = Member.find_by(id: rank.member_id) %>
+      <tr>
+        <td><%= rank.member_id %></td>
+        <td><%= member.name %></td>
+        <td><%= rank.click %></td>
+        <% @highscore_click = Clickresult.where(member_id: rank.member_id).maximum('clickTaskResult') %>
+        <td><%= @highscore_click %></td>
+      </tr>
+  <% end %>
+</table>

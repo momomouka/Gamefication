@@ -57,6 +57,7 @@ ActiveRecord::Schema.define(version: 20171113071933) do
   end
 
   create_table "members", force: :cascade do |t|
+    t.string "fullname", null: false
     t.string "name", null: false
     t.string "email", null: false
     t.integer "gender", default: 0, null: false

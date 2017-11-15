@@ -1,0 +1,21 @@
+<% @page_title = "ランキング" %>
+
+<h2>ATMTタスク ランキング</h2>
+<table>
+  <tr>
+    <th>ID</th>
+    <th>ニックネーム</th>
+    <th>スコア</th>
+    <th>1回での最高点</th>
+  </tr>
+  <% @rank_atmt.each do |rank| %>
+      <% member = Member.find_by(id: rank.member_id) %>
+      <tr>
+        <td><%= rank.member_id %></td>
+        <td><%= member.name %></td>
+        <td><%= rank.atmt %></td>
+        <% @highscore_atmt = Atmtresult.where(member_id: rank.member_id).maximum('atmtTaskResult') %>
+        <td><%= @highscore_atmt %></td>
+      </tr>
+  <% end %>
+</table>

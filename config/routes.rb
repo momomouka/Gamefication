@@ -25,6 +25,10 @@ Rails.application.routes.draw do
 
   get 'tasks/index'
   get 'rankings/index'
+  get 'rankings/atmt'
+  get 'rankings/math'
+  get 'rankings/click'
+
 
 	root to: "top#index"
   get 'top/about'
@@ -36,5 +40,8 @@ Rails.application.routes.draw do
   resource :account, only: [:show, :edit, :update]
   resource :sumscores, only: [:show, :new, :create, :update]
 	resource :achievements, only: [:show, :new, :create]
+  get 'achievements/atmt'
+  get 'achievements/math'
+  get 'achievements/click'
 
 end

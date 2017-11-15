@@ -1,0 +1,21 @@
+<% @page_title = "ランキング" %>
+
+<h2>暗算タスク ランキング</h2>
+<table>
+  <tr>
+    <th>ID</th>
+    <th>ニックネーム</th>
+    <th>スコア</th>
+    <th>1回での最高点</th>
+  </tr>
+  <% @rank_math.each do |rank| %>
+      <% member = Member.find_by(id: rank.member_id) %>
+      <tr>
+        <td><%= rank.member_id %></td>
+        <td><%= member.name %></td>
+        <td><%= rank.math %></td>
+        <% @highscore_math = Mathresult.where(member_id: rank.member_id).maximum('mathTaskResult') %>
+        <td><%= @highscore_math %></td>
+      </tr>
+  <% end %>
+</table>

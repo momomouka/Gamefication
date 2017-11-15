@@ -1,6 +1,7 @@
 class CreateMembers < ActiveRecord::Migration[5.1]
 	def change
 		create_table :members do |t|
+			t.string :fullname, null: false #フルネーム
 			t.string :name, null: false # 名前
 			t.string :email, null: false # メアド
 			t.integer :gender, null: false, default: 0 # 性別　0は男　1は女
