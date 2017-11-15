@@ -12,7 +12,7 @@ $(function() {
     $('.menubar').hide();
     
     {
-    var NUM = 3;                    // チェックボックス数
+    var NUM = 5;                    // チェックボックス数
     var SIZE = 300;                 // ステージの大きさ
     var count = 0;                  // 現在チェックされている数
     var st = new Date().getTime();  // 開始時間
@@ -33,11 +33,11 @@ $(function() {
       .css('position', 'absolute')
       .css(newPos())
       .each(function() {
-        $(this).animate(newPos(), 3000, arguments.callee);
+        $(this).animate(newPos(), speed, arguments.callee);
       });
     }  // チェックボックスの生成・アニメーションの設定
     
-    $('.box').click(function() {
+    $('body').on('click','.box',function() {
       $(this).remove();
       count++;
       $('<input type="button">').addClass("box")
@@ -46,7 +46,7 @@ $(function() {
         .css('position', 'absolute')
         .css(newPos())
         .each(function() {
-        $(this).animate(newPos(), 3000, arguments.callee);
+        $(this).animate(newPos(), speed, arguments.callee);
       });
     });// チェックボックスが押されたときの処理
 

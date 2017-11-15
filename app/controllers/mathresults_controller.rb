@@ -25,8 +25,6 @@ class MathresultsController < ApplicationController
  end
 
  def game
-   @mathresult = Mathresult.new
-   @mathscore = params[:mathscore]
  end
 
  def score_get

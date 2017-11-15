@@ -25,8 +25,6 @@ class AtmtresultsController < ApplicationController
   end
   
   def game
-    @atmtresult = Atmtresult.new
-    @atmtscore = params[:atmtscore]
   end
   
   def score_get

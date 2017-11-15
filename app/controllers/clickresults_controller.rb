@@ -25,8 +25,6 @@ class ClickresultsController < ApplicationController
   end
 
   def game
-    @clickresult = Clickresult.new
-    @clickscore = params[:clickscore]
   end
 
   def score_get
