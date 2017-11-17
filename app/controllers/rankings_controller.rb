@@ -11,11 +11,11 @@ class RankingsController < ApplicationController
   def index
     case @current_member.tasktype
       when 1 then
-        redirect_to 'rankings/atmt'
+        redirect_to '/rankings/atmt'
       when 2 then
-        redirect_to 'rankings/math'
+        redirect_to '/rankings/math'
       when 3 then
-        redirect_to 'rankings/click'
+        redirect_to '/rankings/click'
     end
   end
 

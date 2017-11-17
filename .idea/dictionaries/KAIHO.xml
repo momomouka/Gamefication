@@ -11,13 +11,18 @@
       <w>clickresults</w>
       <w>clickscore</w>
       <w>clicksum</w>
+      <w>fullname</w>
       <w>gametype</w>
+      <w>gmail</w>
       <w>highscore</w>
+      <w>kaiho</w>
+      <w>lowscore</w>
       <w>mathresult</w>
       <w>mathresults</w>
       <w>mathscore</w>
       <w>mathsum</w>
       <w>membertype</w>
+      <w>okalab</w>
       <w>pagemove</w>
       <w>passname</w>
       <w>sumscore</w>
@@ -25,6 +30,7 @@
       <w>taskcount</w>
       <w>taskresult</w>
       <w>tasktype</w>
+      <w>topscore</w>
     </words>
   </dictionary>
 </component>

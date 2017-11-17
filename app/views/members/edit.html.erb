@@ -7,8 +7,13 @@
 <%= form_for @member do |form| %>
 <table class="attr">
   <tr>
-    <th><%= form.label :name, "氏名" %></th>
+    <th><%= form.label :fullname, "氏名" %></th>
+    <td><%= form.text_field :fullname %></td>
+  </tr>
+  <tr>
+    <th><%= form.label :name, "ニックネーム" %></th>
     <td><%= form.text_field :name %></td>
+    <td>※システム上ではニックネームが表示されます。</td>
   </tr>
   <tr>
     <th>性別</th>

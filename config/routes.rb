@@ -44,4 +44,6 @@ Rails.application.routes.draw do
   get 'achievements/math'
   get 'achievements/click'
 
+  resource :questions, only: [:new, :create]
+
 end

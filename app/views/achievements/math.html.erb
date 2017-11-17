@@ -3,12 +3,17 @@
 <h2>実績</h2>
 
 <% if Mathresult.where(member_id: @current_member.id).exists? %>
-    <table>
+    <table border="2" rules="groups">
+      <colgroup span="1"></colgroup>
+      <colgroup span="1"></colgroup>
+      <thead>
       <tr>
         <th>ID</th>
         <th>タイトル</th>
         <th>取得条件</th>
       </tr>
+      </thead>
+      <tbody>
       <tr>
         <th>1</th>
         <% if MemberAchieve.exists?(member_id: @current_member.id, achievement_id: 11) %>
@@ -19,7 +24,7 @@
             <th><%= "未達成" %></th>
             <th><%= "???" %></th>
             <% if @highscore_math >= 0 then %>
-                <th><%= link_to '獲得', achievements_path(:id => 11),:method => :post %></th>
+                <th><%= link_to '獲得', achievements_path(:id => 11), :method => :post %></th>
             <% end %>
         <% end %>
       </tr>
@@ -34,7 +39,7 @@
             <th><%= "未達成" %></th>
             <th><%= "???" %></th>
             <% if @highscore_math >= 10 then %>
-                <th><%= link_to '獲得', achievements_path(:id => 12),:method => :post %></th>
+                <th><%= link_to '獲得', achievements_path(:id => 12), :method => :post %></th>
             <% end %>
         <% end %>
       </tr>
@@ -49,7 +54,7 @@
             <th><%= "未達成" %></th>
             <th><%= "???" %></th>
             <% if @highscore_math >= 20 then %>
-                <th><%= link_to '獲得', achievements_path(:id => 13),:method => :post %></th>
+                <th><%= link_to '獲得', achievements_path(:id => 13), :method => :post %></th>
             <% end %>
         <% end %>
       </tr>
@@ -64,7 +69,7 @@
             <th><%= "未達成" %></th>
             <th><%= "???" %></th>
             <% if @highscore_math >= 30 then %>
-                <th><%= link_to '獲得', achievements_path(:id => 14),:method => :post %></th>
+                <th><%= link_to '獲得', achievements_path(:id => 14), :method => :post %></th>
             <% end %>
         <% end %>
       </tr>
@@ -79,7 +84,7 @@
             <th><%= "未達成" %></th>
             <th><%= "???" %></th>
             <% if @sumscore.math >= 100 then %>
-                <th><%= link_to '獲得', achievements_path(:id => 15),:method => :post %></th>
+                <th><%= link_to '獲得', achievements_path(:id => 15), :method => :post %></th>
             <% end %>
         <% end %>
       </tr>
@@ -94,7 +99,7 @@
             <th><%= "未達成" %></th>
             <th><%= "???" %></th>
             <% if @sumscore.math >= 200 then %>
-                <th><%= link_to '獲得', achievements_path(:id => 16),:method => :post %></th>
+                <th><%= link_to '獲得', achievements_path(:id => 16), :method => :post %></th>
             <% end %>
         <% end %>
       </tr>
@@ -109,7 +114,7 @@
             <th><%= "未達成" %></th>
             <th><%= "???" %></th>
             <% if @sumscore.math >= 400 then %>
-                <th><%= link_to '獲得', achievements_path(:id => 17),:method => :post %></th>
+                <th><%= link_to '獲得', achievements_path(:id => 17), :method => :post %></th>
             <% end %>
         <% end %>
       </tr>
@@ -124,7 +129,7 @@
             <th><%= "未達成" %></th>
             <th><%= "???" %></th>
             <% if @taskcount_math >= 7 then %>
-                <th><%= link_to '獲得', achievements_path(:id => 18),:method => :post %></th>
+                <th><%= link_to '獲得', achievements_path(:id => 18), :method => :post %></th>
             <% end %>
         <% end %>
       </tr>
@@ -139,7 +144,7 @@
             <th><%= "未達成" %></th>
             <th><%= "???" %></th>
             <% if @lowscore_math <= 7 then %>
-                <th><%= link_to '獲得', achievements_path(:id => 19),:method => :post %></th>
+                <th><%= link_to '獲得', achievements_path(:id => 19), :method => :post %></th>
             <% end %>
         <% end %>
       </tr>
@@ -154,11 +159,11 @@
             <th><%= "未達成" %></th>
             <th><%= "???" %></th>
             <% if MemberAchieve.where(member_id: @current_member).count == 10 then %>
-                <th><%= link_to '獲得', achievements_path(:id => 20),:method => :post %></th>
+                <th><%= link_to '獲得', achievements_path(:id => 20), :method => :post %></th>
             <% end %>
         <% end %>
       </tr>
-
+      </tbody>
     </table>
 
 <% else %>

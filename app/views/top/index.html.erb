@@ -4,4 +4,8 @@
    nowday = Date.today %>
 <h2><%= "本日は「#{nowday}」です。" %></h2>
 
+<br>
+<% unless current_member %>
+    <% else %>
 <%= link_to "この実験について", '/top/about' %>
+<% end %>

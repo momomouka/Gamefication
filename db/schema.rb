@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171113071933) do
+ActiveRecord::Schema.define(version: 20171116053409) do
 
   create_table "achievements", force: :cascade do |t|
     t.integer "number"
@@ -70,6 +70,52 @@ ActiveRecord::Schema.define(version: 20171113071933) do
     t.integer "membertype", default: 0, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "questions", force: :cascade do |t|
+    t.integer "q1"
+    t.text "q2"
+    t.integer "q3"
+    t.integer "q41"
+    t.integer "q42"
+    t.integer "q43"
+    t.integer "q44"
+    t.integer "q45"
+    t.integer "q51"
+    t.integer "q52"
+    t.integer "q53"
+    t.integer "q54"
+    t.integer "q55"
+    t.integer "q61"
+    t.integer "q62"
+    t.integer "q63"
+    t.integer "q64"
+    t.integer "q65"
+    t.integer "q71"
+    t.integer "q72"
+    t.integer "q73"
+    t.integer "q74"
+    t.integer "q75"
+    t.integer "q81"
+    t.integer "q82"
+    t.integer "q83"
+    t.integer "q84"
+    t.integer "q85"
+    t.integer "q91"
+    t.integer "q92"
+    t.integer "q93"
+    t.integer "q94"
+    t.integer "q95"
+    t.integer "q101"
+    t.integer "q102"
+    t.integer "q103"
+    t.integer "q104"
+    t.integer "q105"
+    t.integer "member_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["member_id", "created_at"], name: "index_questions_on_member_id_and_created_at"
+    t.index ["member_id"], name: "index_questions_on_member_id"
   end
 
   create_table "sumscores", force: :cascade do |t|

@@ -11,11 +11,11 @@ class AchievementsController < ApplicationController
   def show
     case @current_member.tasktype
       when 1 then
-        redirect_to 'achievements/atmt'
+        redirect_to '/achievements/atmt'
       when 2 then
-        redirect_to 'achievements/math'
+        redirect_to '/achievements/math'
       when 3 then
-        redirect_to 'achievements/click'
+        redirect_to '/achievements/click'
     end
   end
 

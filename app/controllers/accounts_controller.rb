@@ -1,22 +1,20 @@
 class AccountsController < ApplicationController
   
   def show
-    current_member
-    @member = @current_member
+    @member = Member.find(@current_member.id)
   end
   
   def edit
-    @member = @current_member
+    @member = Member.find(@current_member.id)
   end
   
   def update
-    @member = @current_member
-    @member.assign_attributes(params[:member])
-    if @member.update
-      redirect_to :account, notice: "プロフィール情報を変更しました。"
+    @member = Member.find(@current_member.id)
+    @member.update_attributes(params[:member])
+    if @member.save!
+      redirect_to @member, notice: "会員情報を更新しました。"
     else
       render "edit"
     end
   end
-  
 end

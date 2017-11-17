@@ -20,8 +20,8 @@ class Member < ApplicationRecord
   has_many :atmtresults , dependent: :destroy
   has_many :mathresults , dependent: :destroy
   has_many :clickresults , dependent: :destroy
-  has_many :achievements , dependent: :destroy
-  has_many :member_achieves, through:  :member_achieves
+  has_many :member_achieves, through: :member_achieves
   has_one :taskresult , dependent: :destroy
 	has_one :sumscore ,dependent: :destroy
+  has_one :question , dependent: :destroy
 end

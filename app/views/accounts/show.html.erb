@@ -1,2 +1,33 @@
 <% @page_title = "マイページ" %>
 <h2><%= @page_title %></h2>
+
+
+<h3>登録されている情報</h3>
+<table class="attr">
+  <tr>
+    <th>氏名</th>
+    <td><%= @member.fullname %></td>
+  </tr>
+  <tr>
+    <th>ニックネーム</th>
+    <td><%= @member.fullname %></td>
+  </tr>
+  <tr>
+    <th>性別</th>
+    <td><%= @member.gender == 0 ? "男" : "女" %></td>
+  </tr>
+  <tr>
+    <th>誕生日</th>
+    <td><%= @member.birthday.try(:strftime, "%Y年%m月%d日") %></td>
+  </tr>
+  <tr>
+    <th>メールアドレス</th>
+    <td><%= @member.email %></td>
+  </tr>
+  <tr>
+    <th>ログインID</th>
+    <td><%= @member.passname %></td>
+  </tr>
+</table>
+<br>
+<p>※修正したい場合には、海保までご連絡ください。</p>

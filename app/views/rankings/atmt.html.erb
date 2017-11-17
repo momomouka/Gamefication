@@ -1,21 +1,49 @@
 <% @page_title = "ランキング" %>
 
 <h2>ATMTタスク ランキング</h2>
-<table>
+<table border="2" rules="groups">
+  <colgroup span="1"></colgroup>
+  <colgroup span="1"></colgroup>
+  <thead>
   <tr>
-    <th>ID</th>
+    <th>順位</th>
     <th>ニックネーム</th>
     <th>スコア</th>
-    <th>1回での最高点</th>
+    <th>最高点</th>
   </tr>
+  </thead>
+  <tbody>
+  <% grade = 0 %>
+  <% topscore = 10000000 %>
+  <% count = 1 %>
   <% @rank_atmt.each do |rank| %>
       <% member = Member.find_by(id: rank.member_id) %>
-      <tr>
-        <td><%= rank.member_id %></td>
-        <td><%= member.name %></td>
-        <td><%= rank.atmt %></td>
-        <% @highscore_atmt = Atmtresult.where(member_id: rank.member_id).maximum('atmtTaskResult') %>
-        <td><%= @highscore_atmt %></td>
+      <% if topscore > rank.atmt %>
+          <% grade += count %>
+          <% topscore = rank.atmt %>
+          <% count = 1 %>
+      <% else %>
+          <% count += 1 %>
+      <% end %>
+      <% if grade == 1 %>
+          <tr bgcolor="#ffd700">
+      <% elsif grade <= 3 %>
+          <tr bgcolor="#C0C0C0">
+      <% elsif grade <= 5 %>
+          <tr bgcolor="#47222">
+      <% else %>
+          <% if rank.member_id == @current_member.id %>
+              <tr bgcolor="#b0e0e6">
+          <% else %>
+              <tr>
+          <% end %>
+      <% end %>
+      <td align="center"><%= grade %></td>
+      <td align="center"><%= member.name %></td>
+      <td align="center"><%= rank.atmt %></td>
+      <% @highscore_atmt = Atmtresult.where(member_id: rank.member_id).maximum('atmtTaskResult') %>
+      <td align="center"><%= @highscore_atmt %></td>
       </tr>
   <% end %>
+  </tbody>
 </table>

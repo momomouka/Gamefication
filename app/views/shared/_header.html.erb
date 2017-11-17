@@ -1,38 +1,51 @@
 <div class="menubar">
-	<%= menu_link_to "TOP", root_path %> &nbsp;|&nbsp;
+  <%= menu_link_to "TOP", root_path %> &nbsp;|&nbsp;
 
-	<% if logged_in? %>
-			<%= menu_link_to "マイページ", :account %> &nbsp;|&nbsp;
-			<%= menu_link_to "実験タスク", '/tasks/index' %> &nbsp;|&nbsp;
-			<% case @current_member.gametype %>
-	<% when 0 then %>
-					<%= menu_link_to "実験フィードバック", '/sumscores' %> &nbsp;|&nbsp;
-			<% when 1 then %>
-					<%= menu_link_to "実験フィードバック", '/feedback/show' %> &nbsp;|&nbsp;
-			<% when 2 then %>
-					<%= menu_link_to "実験フィードバック", '/rankings/index' %> &nbsp;|&nbsp;
-			<% when 3 then %>
-					<%= menu_link_to "実験フィードバック", '/achievements' %> &nbsp;|&nbsp;
-			<% when 4 then %>
-					<%= menu_link_to "ランキング", '/rankings/index' %> &nbsp;|&nbsp;
-					<%= menu_link_to "実績", '/achievements' %> &nbsp;|&nbsp;
-			<% end %>
+  <% if logged_in? %>
+      <%= menu_link_to "マイページ", :account %> &nbsp;|&nbsp;
+      <% case @current_member.tasktype %>
+  <% when 0 then %>
+          <%= menu_link_to "実験タスク", '/tasks/index' %> &nbsp;|&nbsp;
+      <% when 1 then %>
+          <%= menu_link_to "実験タスク", 'atmtresults/index' %> &nbsp;|&nbsp;
+      <% when 2 then %>
+          <%= menu_link_to "実験タスク", '/mathresults/index' %> &nbsp;|&nbsp;
+      <% when 3 then %>
+          <%= menu_link_to "実験タスク", '/clickresults/index' %> &nbsp;|&nbsp;
+      <% when 4 then %>
+          <%= menu_link_to "ATMTタスク", '/atmtresults/index' %> &nbsp;|&nbsp;
+          <%= menu_link_to "計算タスク", '/mathresults/index' %> &nbsp;|&nbsp;
+          <%= menu_link_to "クリックタスク", '/clickresults/index' %> &nbsp;|&nbsp;
+      <% end %>
+      <% case @current_member.gametype %>
+  <% when 0 then %>
+          <%= menu_link_to "実験フィードバック", '/sumscores' %> &nbsp;|&nbsp;
+      <% when 1 then %>
+          <%= menu_link_to "実験フィードバック", '/feedback/show' %> &nbsp;|&nbsp;
+      <% when 2 then %>
+          <%= menu_link_to "実験フィードバック", '/rankings/index' %> &nbsp;|&nbsp;
+      <% when 3 then %>
+          <%= menu_link_to "実験フィードバック", '/achievements' %> &nbsp;|&nbsp;
+      <% when 4 then %>
+          <%= menu_link_to "ランキング", '/rankings/index' %> &nbsp;|&nbsp;
+          <%= menu_link_to "実績", '/achievements' %> &nbsp;|&nbsp;
+      <% end %>
 
-	<% end %>
+  <% end %>
 
-	<% if logged_in? %>
-			<% if @current_member.administrator %>
-					<%= menu_link_to "被験者一覧", '/members' %> &nbsp;|&nbsp;
-			<% end %>
-	<% end %>
+  <% if logged_in? %>
+      <% if @current_member.administrator %>
+          <%= menu_link_to "被験者一覧", '/members' %> &nbsp;|&nbsp;
+      <% end %>
+  <% end %>
 
-	<% unless current_member %>
-			<%= menu_link_to "ログイン", '/login' %>
-	<% end %>
+  <% unless current_member %>
+      <%= menu_link_to "ログイン", '/login' %>
+  <% end %>
 
-	<% if logged_in? %>
-			<%= @current_member.name + "さん" %>
-			<%= link_to 'ログアウト', logout_path, method: :delete %>
-	<% end %>
+  <% if logged_in? %>
+      <%= @current_member.name + "さん" %>
+      <%= link_to 'ログアウト', logout_path, method: :delete %>
+  <% end %>
 
 </div>

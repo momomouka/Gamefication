@@ -16,12 +16,18 @@
   <tr>
     <th>ID</th>
     <th>氏名</th>
+    <th>task</th>
+    <th>game</th>
+    <th>member</th>
     <th>操作</th>
   </tr>
   <% @members.each do |member| %>
   <tr>
     <td><%= member.id %></td>
     <td><%= link_to member.name, member %></td>
+    <td><%= member.tasktype %></td>
+    <td><%= member.gametype %></td>
+    <td><%= member.membertype %></td>
     <td>
       <%= link_to "編集", [:edit, member] %> |
       <%= link_to "削除", member, method: :delete,

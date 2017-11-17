@@ -11,6 +11,14 @@ class TasksController < ApplicationController
 
 	def index
 		@id = params[:id]
+		case @current_member.tasktype
+			when 1 then
+				redirect_to '/atmtresult/index'
+			when 2 then
+				redirect_to '/mathresults/index'
+			when 3 then
+				redirect_to '/clickresults/index'
+		end
 	end
 
 	def show
