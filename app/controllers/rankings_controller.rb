@@ -20,15 +20,15 @@ class RankingsController < ApplicationController
   end
 
   def atmt
-    @rank_atmt = Sumscore.order("atmt desc")
+    @rank_atmt = Sumscore.order("atmt desc").where.not(atmt: 0)
   end
 
   def math
-    @rank_math = Sumscore.order("math desc")
+    @rank_math = Sumscore.order("math desc").where.not(math: 0)
   end
 
   def click
-    @rank_click = Sumscore.order("click desc")
+    @rank_click = Sumscore.order("click desc").where.not(click: 0)
   end
 
 end

@@ -46,4 +46,7 @@ Rails.application.routes.draw do
 
   resource :questions, only: [:new, :create]
 
+  get '*not_found' => 'application#routing_error'
+  post '*not_found' => 'application#routing_error'
+
 end
