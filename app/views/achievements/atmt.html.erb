@@ -2,7 +2,7 @@
 
 <h2>実績</h2>
 
-<% if Atmtresult.where(member_id: @current_member.id).exists? %>
+<% if Atmtresult.where(member_id: @current_member.id).where.not(atmtTaskResult: nil).exists? %>
     <table border="2" rules="groups">
       <colgroup span="1"></colgroup>
       <colgroup span="1"></colgroup>
