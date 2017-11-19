@@ -1,8 +1,17 @@
-
-		<p>タスク着手条件を満たしていません。</p>
-		<p>実験期間になるまでお待ちください。</p>
-		<br>
-		<p>なお、実験期間中にこの画面が表示された場合は、管理者までご連絡ください。</p>
-
-
 <% @page_title = "タスク" %>
+
+
+<% if @current_member.tasktype == 4 %>
+<h2><%= @page_title %></h2>
+    <p><%= menu_link_to "ATMTタスク", 'atmtresults/index' %></p>
+    <p><%= menu_link_to "計算タスク", '/mathresults/index' %></p>
+    <p><%= menu_link_to "クリックタスク", '/clickresults/index' %></p>
+
+<% else %>
+    <h2><%= @page_title %></h2>
+    <p>タスク着手条件を満たしていません。</p>
+    <p>実験期間になるまでお待ちください。</p>
+    <br>
+    <p>なお、実験期間中にこの画面が表示された場合は、管理者までご連絡ください。</p>
+<% end %>
+
