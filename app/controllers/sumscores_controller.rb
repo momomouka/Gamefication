@@ -13,9 +13,9 @@ class SumscoresController < ApplicationController
 	end
 
 	def new
-		@atmtresults = Atmtresult.where(member_id: @current_member.id)
-		@mathresults = Mathresult.where(member_id: @current_member.id)
-		@clickresults = Clickresult.where(member_id: @current_member.id)
+		@atmtresults = Atmtresult.where(member_id: @current_member.id).where.not(atmtTaskResult: nil)
+		@mathresults = Mathresult.where(member_id: @current_member.id).where.not(mathTaskResult: nil)
+		@clickresults = Clickresult.where(member_id: @current_member.id).where.not(clickTaskResult: nil)
 
 		$atmtsum = 0
 		$mathsum = 0
@@ -40,7 +40,7 @@ class SumscoresController < ApplicationController
 		@sumscore.math = $mathsum
 		@sumscore.click = $clicksum
 		@sumscore.member_id = @current_member.id
-		@sumscore.save
+		@sumscore.save!
 		redirect_to '/tasks/index'
 	end
 
