@@ -17,7 +17,7 @@
   $('#start').click(function() {
     $('#start').hide();
     $('.menubar').hide();
-    
+
     {var trueAnswer; //正答
     var userAnswer; //回答
     var numL; //左の項
@@ -26,16 +26,25 @@
     var trueCount = 0; //正答数
     var time; //
     } // 変数宣言
-    
+
+    var postForm = function(url, data) {
+      var $form = $('<form/>', {'action': url, 'method': 'post'});
+      for(var key in data) {
+        $form.append($('<input/>', {'type': 'hidden', 'name': key, 'value': data[key]}));
+      }
+      $form.appendTo(document.body);
+      $form.submit();
+    };
+
     function QuestionCreate() {
       do {
         numL = Math.floor(Math.random() * 100 ) + 1;
         numR = Math.floor(Math.random() * 100 ) + 1;
-        trueAnswer = numL + numR;  
+        trueAnswer = numL + numR;
       } while (trueAnswer >= 100);
       questionNum = questionNum + 1;
     }; // 問題となるnumL,numRと答えtrueAnswerを生成する
-    
+
     function Judge(){
       userAnswer = $("#usertext").val();
       if(trueAnswer == userAnswer) {
@@ -44,22 +53,20 @@
       } else {
 //        alert("は？");
       }
-      
 
-      
       $("#usertext").val("");
       QuestionCreate();
       $("#text").text(numL + " + " + numR)
         .css('font-size','30px');
-      
+
     } // 正誤判定と後処理
-    
+
     {
     QuestionCreate(); //　下三行初期設定
     $("#text").text(numL + " + " + numR).addClass("math")
       .css('font-size','30px');
     } // セットアップ
-    
+
     $('<input type="text" id="usertext" value="" class="math">') // テキストフィールド
       .appendTo('body');
     $(document).ready(function(){
@@ -88,15 +95,15 @@
         };
     });
   }); // アクティブになったらテキストフィールドの文字を消すやつ
-    
+
     $('<input type="button" id="userbutton" value="回答する" class="math">') // 回答ボタン
       .css({'width':'80px', 'height':'25px'})
       .appendTo('body');
-    
+
     $('#userbutton').click(function(){
       Judge();
     }); // 回答ボタン押したら正誤判定する
-    
+
     $("#usertext").keypress(function(event){
       if(event.keyCode == 13){
         Judge();
@@ -106,28 +113,16 @@
 
     setTimeout(function(){
       $(".math").hide();
-      $('<%= link_to "タスクが完了しました。こちらをクリックしてください。", '/mathresults/create',method: :post %>')
-          .appendTo("body");
-      $.ajax({
-        url: '/mathresults/score_get',
-        type: 'GET',
-        data: {"mathscore": trueCount},
-        success: function (data) {
-          console.log(buttonCount);
-        },
-        error: function (data) {
-          console.log("XMLHttpRequest : " + XMLHttpRequest.status);
-          console.log("textStatus     : " + textStatus);
-          console.log("errorThrown    : " + errorThrown.message);
-        }
-      })
+      alert(trueCount + "個クリックできました！");
+      var data = {'mathscore' : trueCount };
+      postForm('/mathresults/create',data);
     },60000);// 終了判定
 
-    
+
   return false;
   });
   });
-    
+
   </script>
 </body>
 </html>

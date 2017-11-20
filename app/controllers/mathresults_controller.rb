@@ -1,6 +1,7 @@
 class MathresultsController < ApplicationController
  before_action :login_check
-  
+ protect_from_forgery :except => [:game]
+
   def login_check
     if @current_member.id == nil
       flash[:notice] = "各種課題をやる為には、ログインが必要です"
@@ -18,9 +19,9 @@ class MathresultsController < ApplicationController
 
  def create
    @mathresult = Mathresult.new
-   @mathresult.mathTaskResult = $mathscore
+   @mathresult.mathTaskResult = params[:mathscore]
    @mathresult.member_id = @current_member.id
-   @mathresult.save
+   @mathresult.save!
    redirect_to '/sumscores/new'
  end
 
@@ -28,8 +29,11 @@ class MathresultsController < ApplicationController
  end
 
  def score_get
-   $mathscore = params[:mathscore]
-   render :nothing => true
+   @mathresult = Mathresult.new
+   @mathresult.mathTaskResult = params[:mathscore]
+   @mathresult.member_id = @current_member.id
+   @mathresult.save
+   redirect_to '/sumscores/new'
  end
 
  def show

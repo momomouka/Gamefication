@@ -1,5 +1,6 @@
 class AtmtresultsController < ApplicationController
   before_action :login_check
+  protect_from_forgery :except => [:game]
 
   def login_check
     if @current_member.id == nil
@@ -18,7 +19,7 @@ class AtmtresultsController < ApplicationController
 
   def create 
     @atmtresult = Atmtresult.new
-    @atmtresult.atmtTaskResult = $atmtscore
+    @atmtresult.atmtTaskResult = params[:atmtscore]
     @atmtresult.member_id = @current_member.id
     @atmtresult.save
     redirect_to '/sumscores/new'
@@ -28,8 +29,12 @@ class AtmtresultsController < ApplicationController
   end
   
   def score_get
-    $atmtscore = params[:atmtscore]
-    render :nothing => true
+    @atmtresult = Atmtresult.new
+    @atmtresult.atmtTaskResult = params[:atmtscore]
+    @atmtresult.member_id = @current_member.id
+    @atmtresult.save!
+
+    redirect_to '/sumscores/new'
   end
   
   def show

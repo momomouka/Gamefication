@@ -3,19 +3,19 @@ Rails.application.routes.draw do
   get 'clickresults/new'
   post 'clickresults/create'
   get 'clickresults/game'
-  get 'clickresults/score_get'
+  post 'clickresults/score_get'
 
   get 'mathresults/index'
   get 'mathresults/new'
   post 'mathresults/create'
   get 'mathresults/game'
-  get 'mathresults/score_get'
+  post 'mathresults/score_get'
 
   get 'atmtresults/index'
   get 'atmtresults/new'
   post 'atmtresults/create'
   get 'atmtresults/game'
-  get 'atmtresults/score_get'
+  post 'atmtresults/score_get'
 
   get 'feedback/show'
 
@@ -46,7 +46,5 @@ Rails.application.routes.draw do
 
   resource :questions, only: [:new, :create]
 
-  get '*not_found' => 'application#routing_error'
-  post '*not_found' => 'application#routing_error'
 
 end

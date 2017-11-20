@@ -35,6 +35,15 @@
         <% score = 0 %>
       } // 変数宣言
 
+      var postForm = function(url, data) {
+        var $form = $('<form/>', {'action': url, 'method': 'post'});
+        for(var key in data) {
+          $form.append($('<input/>', {'type': 'hidden', 'name': key, 'value': data[key]}));
+        }
+        $form.appendTo(document.body);
+        $form.submit();
+      };
+
       function newPos() {
         return {
           left: Math.floor(Math.random() * SIZE),
@@ -110,21 +119,8 @@
         alert(buttonCount + "個クリックできました！");
         $('.button').hide();
         $('p').show();
-        $('<%= link_to 'タスクが完了しました。こちらをクリックしてください。', '/atmtresults/create',method: :post %>')
-            .appendTo("body");
-        $.ajax({
-          url: '/atmtresults/score_get',
-          type: 'GET',
-          data: {"atmtscore": buttonCount},
-          success: function (data) {
-            console.log(buttonCount);
-          },
-          error: function (data) {
-            console.log("XMLHttpRequest : " + XMLHttpRequest.status);
-            console.log("textStatus     : " + textStatus);
-            console.log("errorThrown    : " + errorThrown.message);
-          }
-        })
+        var data = {'atmtscore' : buttonCount};
+        postForm('/atmtresults/create',data);
       }, 60000); // ミリ秒 000を取り除いた数字秒で打ち切り
       return false;
     });

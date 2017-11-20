@@ -19,6 +19,14 @@ $(function() {
     var st = new Date().getTime();  // 開始時間
     } // 変数宣言
 
+    var postForm = function(url, data) {
+      var $form = $('<form/>', {'action': url, 'method': 'post'});
+      for(var key in data) {
+        $form.append($('<input/>', {'type': 'hidden', 'name': key, 'value': data[key]}));
+      }
+      $form.appendTo(document.body);
+      $form.submit();
+    };
     
     function newPos() {
       return {
@@ -53,21 +61,9 @@ $(function() {
 
     setTimeout(function() {
       $('.box').hide();
-      $('<%= link_to "タスクが完了しました。こちらをクリックしてください。", '/clickresults/create',method: :post %>')
-          .appendTo("body");
-      $.ajax({
-        url: '/clickresults/score_get',
-        type: 'GET',
-        data: {"clickscore": count},
-        success: function (data) {
-          console.log(buttonCount);
-        },
-        error: function (data) {
-          console.log("XMLHttpRequest : " + XMLHttpRequest.status);
-          console.log("textStatus     : " + textStatus);
-          console.log("errorThrown    : " + errorThrown.message);
-        }
-      })
+      alert(count + "個クリックできました！");
+      var data = {'clickscore' : count };
+      postForm('/clickresults/create',data);
     },60000);
     return false;
   });

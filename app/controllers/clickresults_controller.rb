@@ -1,6 +1,7 @@
 class ClickresultsController < ApplicationController
   before_action :login_check
-  
+  protect_from_forgery :except => [:game]
+
   def login_check
     if @current_member.id == nil
       flash[:notice] = "各種課題をやる為には、ログインが必要です"
@@ -18,9 +19,9 @@ class ClickresultsController < ApplicationController
 
   def create
     @clickresult = Clickresult.new
-    @clickresult.clickTaskResult = $clickscore
+    @clickresult.clickTaskResult = params[:clickscore]
     @clickresult.member_id = @current_member.id
-    @clickresult.save
+    @clickresult.save!
     redirect_to '/sumscores/new'
   end
 
@@ -28,8 +29,11 @@ class ClickresultsController < ApplicationController
   end
 
   def score_get
-    $clickscore = params[:clickscore]
-    render :nothing => true
+    @clickresult = Clickresult.new
+    @clickresult.clickTaskResult = params[:clickscore]
+    @clickresult.member_id = @current_member.id
+    @clickresult.save
+    redirect_to '/sumscores/new'
   end
 
   def show
