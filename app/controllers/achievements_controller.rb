@@ -50,6 +50,6 @@ class AchievementsController < ApplicationController
     @member_achieve.member_id = @current_member.id
     @member_achieve.achievement_id = params[:id]
     @member_achieve.save!
-    redirect_to '/achievements'
+    redirect_to  action: 'show'
   end
 end

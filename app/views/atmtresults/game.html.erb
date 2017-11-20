@@ -94,7 +94,7 @@
             .css(Position());
       } // ボタンの生成
 
-      $('body').on('click','.button',function () {
+      $('body').on('mousedown','.button',function () {
         idname = $(this).attr("id");
         if (buttonCount == idname) {
           $('<input type="button">').val(buttonCount + NUM).attr("id", buttonCount + NUM).addClass("button")

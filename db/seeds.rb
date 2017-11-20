@@ -1,7 +1,7 @@
 
 Member.create(
   :fullname => "管理者",
-  :name => "管理者" ,
+  :name => "カイホ" ,
   :email => "kaiho.okalab2017@gmail.com" ,
   :gender => 0 ,
   :administrator => true ,

@@ -46,7 +46,7 @@ $(function() {
       });
     }  // チェックボックスの生成・アニメーションの設定
     
-    $('body').on('click','.box',function() {
+    $('body').on('mousedown','.box',function() {
       $(this).remove();
       count++;
       $('<input type="button">').addClass("box")
