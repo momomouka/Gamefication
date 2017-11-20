@@ -31,9 +31,7 @@
     <td><%= member.gametype %></td>
     <td><%= member.membertype %></td>
     <td>
-      <%= link_to "編集", [:edit, member] %> |
-      <%= link_to "削除", member, method: :delete,
-            confirm: "本当に削除しますか?" %>
+      <%= link_to "編集", [:edit, member] %>
     </td>
   </tr>
   <% end %>

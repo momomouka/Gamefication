@@ -11,7 +11,7 @@
     <th>順位</th>
     <th>ニックネーム</th>
     <th>スコア</th>
-    <th>最高点</th>
+    <th>最高タスク点</th>
   </tr>
   </thead>
   <tbody>
@@ -32,7 +32,7 @@
       <% elsif grade <= 3 %>
           <tr bgcolor="#C0C0C0">
       <% elsif grade <= 5 %>
-          <tr bgcolor="#47222">
+          <tr bgcolor="#C47222">
       <% else %>
           <% if rank.member_id == @current_member.id %>
               <tr bgcolor="#b0e0e6">
@@ -49,3 +49,12 @@
   <% end %>
   </tbody>
 </table>
+<br>
+<br>
+<h3>ランキング説明</h3>
+本実験では、タスクを行った結果（タスク点）の累計をスコアとして算出し、<br>
+スコアの高さを競う形式となっています。また、順位に応じて<br>
+<p>1位＝<span style = "background-color:#ffd700">ゴールドランク</span></p>
+<p>2,3位＝<span style = "background-color:#C0C0C0">シルバーランク</span></p>
+<p>4,5位＝<span style = "background-color:#C47222">ブロンズランク</span></p>
+<p>と、ランク分けをしています。</p>
