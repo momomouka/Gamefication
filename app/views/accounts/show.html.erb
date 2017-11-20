@@ -1,6 +1,8 @@
 <% @page_title = "マイページ" %>
 <h2><%= @page_title %></h2>
-
+<% if mobileuser == 1 %>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+<% end %>
 
 <h3>登録されている情報</h3>
 <table class="attr">

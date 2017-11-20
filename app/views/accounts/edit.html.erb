@@ -1,6 +1,8 @@
 <% @page_title = "プロフィール情報の編集" %>
 <h2><%= @page_title %></h2>
-
+<% if mobileuser == 1 %>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+<% end %>
 <p><%= link_to "マイページに戻る", :account %></p>
 
 <%= form_for @member do |form| %>
