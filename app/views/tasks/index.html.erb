@@ -1,5 +1,7 @@
 <% @page_title = "タスク" %>
-
+<% if mobileuser == 1 %>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+<% end %>
 
 <% if @current_member.tasktype == 4 %>
 <h2><%= @page_title %></h2>
