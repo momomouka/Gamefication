@@ -2,8 +2,10 @@
 <% if mobileuser == 1 %>
     <meta name="viewport" content="width=device-width,initial-scale=1">
 <% end %>
+
+
 <% if Sumscore.exists?(member_id:@current_member) %>
-    <%= link_to 'こちらをクリックしてください。', '/sumscores',method: :put %>
+    <%= link_to 'こちらをクリックしてください', '/sumscores',method: :put %>
 <% else %>
     <%= link_to 'こちらをクリックしてください', '/sumscores',method: :post %>
 <% end %>
