@@ -28,6 +28,13 @@ def log_out
   @current_member = nil
 end
 
-
+def mobileuser?
+  ua = request.env["HTTP_USER_AGENT"]
+  if(ua.include?('Mobile') || ua.include?('Android'))
+    return 1
+  else
+    return 0
+  end
+end
 
 end

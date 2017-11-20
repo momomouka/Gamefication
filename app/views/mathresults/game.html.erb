@@ -113,7 +113,7 @@
 
     setTimeout(function(){
       $(".math").hide();
-      alert(trueCount + "個クリックできました！");
+      alert(trueCount + "個正答できました！");
       var data = {'mathscore' : trueCount };
       postForm('/mathresults/create',data);
     },60000);// 終了判定
