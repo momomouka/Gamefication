@@ -46,7 +46,7 @@ class AlleditsController < ApplicationController
   end
 
   def member
-    @members = Member.order(params[:id])
+    @members = Member.order('id, created_at')
     respond_to do |format|
       format.html
       format.csv { send_data @members.to_csv , type: 'text/csv; charset=shift_jis'}
@@ -54,7 +54,7 @@ class AlleditsController < ApplicationController
   end
 
   def atmt
-    @atmts = Atmtresult.order(:member_id)
+    @atmts = Atmtresult.order('member_id, created_at')
     respond_to do |format|
       format.html
       format.csv { send_data @atmts.to_csv , type: 'text/csv; charset=shift_jis'}
@@ -62,7 +62,7 @@ class AlleditsController < ApplicationController
   end
 
   def math
-    @maths = Mathresult.order(:member_id)
+    @maths = Mathresult.order('member_id, created_at')
     respond_to do |format|
       format.html
       format.csv { send_data @maths.to_csv , type: 'text/csv; charset=shift_jis'}
@@ -70,7 +70,7 @@ class AlleditsController < ApplicationController
   end
 
   def click
-    @clicks = Clickresult.order(:member_id)
+    @clicks = Clickresult.order('member_id, created_at')
     respond_to do |format|
       format.html
       format.csv { send_data @clicks.to_csv , type: 'text/csv; charset=shift_jis'}

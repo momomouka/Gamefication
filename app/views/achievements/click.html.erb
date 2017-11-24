@@ -17,163 +17,265 @@
       </tr>
       </thead>
       <tbody>
+
       <tr>
-        <th>1</th>
-        <% if MemberAchieve.exists?(member_id: @current_member.id, achievement_id: 21) %>
-            <% @achi = Achievement.find(21) %>
-            <th><%= @achi.title %></th>
-            <th><%= @achi.explain %></th>
+        <% if MemberAchieve.exists?(member_id: @current_member.id, achievement_id: 31) %>
+            <% @achi = Achievement.find(31) %>
+            <th bgcolor="#C47222"><%= @achi.number %></th>
+            <th bgcolor="#C47222"><%= @achi.title %></th>
+            <th bgcolor="#C47222"><%= @achi.explain %></th>
         <% else %>
-            <th><%= "未達成" %></th>
-            <th><%= "???" %></th>
+            <th>1</th>
+            <th><%= "？？？" %></th>
+            <th><%= "？？？" %></th>
             <% if @highscore_click >= 0 then %>
-                <th><%= link_to '獲得', achievements_path(:id => 21), :method => :post %></th>
+                <th><%= link_to '獲得', achievements_path(:id => 31), :method => :post %></th>
             <% end %>
         <% end %>
       </tr>
 
       <tr>
-        <th>2</th>
-        <% if MemberAchieve.exists?(member_id: @current_member.id, achievement_id: 22) %>
-            <% @achi = Achievement.find(22) %>
-            <th><%= @achi.title %></th>
-            <th><%= @achi.explain %></th>
+        <% if MemberAchieve.exists?(member_id: @current_member.id, achievement_id: 32) %>
+            <% @achi = Achievement.find(32) %>
+            <th bgcolor="#C47222"><%= @achi.number %></th>
+            <th bgcolor="#C47222"><%= @achi.title %></th>
+            <th bgcolor="#C47222"><%= @achi.explain %></th>
         <% else %>
-            <th><%= "未達成" %></th>
-            <th><%= "???" %></th>
+            <th>2</th>
+            <th><%= "？？？" %></th>
+            <th><%= "1回のタスクで〇〇を獲得する" %></th>
+            <% if @highscore_click >= 15 then %>
+                <th><%= link_to '獲得', achievements_path(:id => 32), :method => :post %></th>
+            <% end %>
+        <% end %>
+      </tr>
+
+      <tr>
+        <% if MemberAchieve.exists?(member_id: @current_member.id, achievement_id: 33) %>
+            <% @achi = Achievement.find(33) %>
+            <th bgcolor="#C0C0C0"><%= @achi.number %></th>
+            <th bgcolor="#C0C0C0"><%= @achi.title %></th>
+            <th bgcolor="#C0C0C0"><%= @achi.explain %></th>
+        <% else %>
+            <th>3</th>
+            <th><%= "？？？" %></th>
+            <th><%= "1回のタスクで〇〇を獲得する" %></th>
             <% if @highscore_click >= 20 then %>
-                <th><%= link_to '獲得', achievements_path(:id => 22), :method => :post %></th>
+                <th><%= link_to '獲得', achievements_path(:id => 33), :method => :post %></th>
             <% end %>
         <% end %>
       </tr>
 
       <tr>
-        <th>3</th>
-        <% if MemberAchieve.exists?(member_id: @current_member.id, achievement_id: 23) %>
-            <% @achi = Achievement.find(23) %>
-            <th><%= @achi.title %></th>
-            <th><%= @achi.explain %></th>
+        <% if MemberAchieve.exists?(member_id: @current_member.id, achievement_id: 34) %>
+            <% @achi = Achievement.find(34) %>
+            <th bgcolor="#ffd700"><%= @achi.number %></th>
+            <th bgcolor="#ffd700"><%= @achi.title %></th>
+            <th bgcolor="#ffd700"><%= @achi.explain %></th>
         <% else %>
-            <th><%= "未達成" %></th>
-            <th><%= "???" %></th>
-            <% if @highscore_click >= 35 then %>
-                <th><%= link_to '獲得', achievements_path(:id => 23), :method => :post %></th>
+            <th>4</th>
+            <th><%= "？？？" %></th>
+            <th><%= "1回のタスクで〇〇を獲得する" %></th>
+            <% if @highscore_click >= 30 then %>
+                <th><%= link_to '獲得', achievements_path(:id => 34), :method => :post %></th>
             <% end %>
         <% end %>
       </tr>
 
       <tr>
-        <th>4</th>
-        <% if MemberAchieve.exists?(member_id: @current_member.id, achievement_id: 24) %>
-            <% @achi = Achievement.find(24) %>
-            <th><%= @achi.title %></th>
-            <th><%= @achi.explain %></th>
+        <% if MemberAchieve.exists?(member_id: @current_member.id, achievement_id: 35) %>
+            <% @achi = Achievement.find(35) %>
+            <th bgcolor="#C47222"><%= @achi.number %></th>
+            <th bgcolor="#C47222"><%= @achi.title %></th>
+            <th bgcolor="#C47222"><%= @achi.explain %></th>
         <% else %>
-            <th><%= "未達成" %></th>
-            <th><%= "???" %></th>
-            <% if @highscore_click >= 50 then %>
-                <th><%= link_to '獲得', achievements_path(:id => 24), :method => :post %></th>
-            <% end %>
-        <% end %>
-      </tr>
-
-      <tr>
-        <th>5</th>
-        <% if MemberAchieve.exists?(member_id: @current_member.id, achievement_id: 25) %>
-            <% @achi = Achievement.find(25) %>
-            <th><%= @achi.title %></th>
-            <th><%= @achi.explain %></th>
-        <% else %>
-            <th><%= "未達成" %></th>
-            <th><%= "???" %></th>
+            <th>5</th>
+            <th><%= "？？？" %></th>
+            <th><%= "タスク結果の合計が〇〇を超える" %></th>
             <% if @sumscore.click >= 150 then %>
-                <th><%= link_to '獲得', achievements_path(:id => 25), :method => :post %></th>
+                <th><%= link_to '獲得', achievements_path(:id => 35), :method => :post %></th>
             <% end %>
         <% end %>
       </tr>
 
       <tr>
-        <th>6</th>
-        <% if MemberAchieve.exists?(member_id: @current_member.id, achievement_id: 26) %>
-            <% @achi = Achievement.find(26) %>
-            <th><%= @achi.title %></th>
-            <th><%= @achi.explain %></th>
+        <% if MemberAchieve.exists?(member_id: @current_member.id, achievement_id: 36) %>
+            <% @achi = Achievement.find(36) %>
+            <th bgcolor="#C0C0C0"><%= @achi.number %></th>
+            <th bgcolor="#C0C0C0"><%= @achi.title %></th>
+            <th bgcolor="#C0C0C0"><%= @achi.explain %></th>
         <% else %>
-            <th><%= "未達成" %></th>
-            <th><%= "???" %></th>
+            <th>6</th>
+            <th><%= "？？？" %></th>
+            <th><%= "タスク結果の合計が〇〇を超える" %></th>
             <% if @sumscore.click >= 300 then %>
-                <th><%= link_to '獲得', achievements_path(:id => 26), :method => :post %></th>
+                <th><%= link_to '獲得', achievements_path(:id => 36), :method => :post %></th>
             <% end %>
         <% end %>
       </tr>
 
       <tr>
-        <th>7</th>
-        <% if MemberAchieve.exists?(member_id: @current_member.id, achievement_id: 27) %>
-            <% @achi = Achievement.find(27) %>
-            <th><%= @achi.title %></th>
-            <th><%= @achi.explain %></th>
+        <% if MemberAchieve.exists?(member_id: @current_member.id, achievement_id: 37) %>
+            <% @achi = Achievement.find(37) %>
+            <th bgcolor="#ffd700"><%= @achi.number %></th>
+            <th bgcolor="#ffd700"><%= @achi.title %></th>
+            <th bgcolor="#ffd700"><%= @achi.explain %></th>
         <% else %>
-            <th><%= "未達成" %></th>
-            <th><%= "???" %></th>
+            <th>7</th>
+            <th><%= "？？？" %></th>
+            <th><%= "タスク結果の合計が〇〇を超える" %></th>
             <% if @sumscore.click >= 600 then %>
-                <th><%= link_to '獲得', achievements_path(:id => 27), :method => :post %></th>
+                <th><%= link_to '獲得', achievements_path(:id => 37), :method => :post %></th>
             <% end %>
         <% end %>
       </tr>
 
       <tr>
-        <th>8</th>
-        <% if MemberAchieve.exists?(member_id: @current_member.id, achievement_id: 28) %>
-            <% @achi = Achievement.find(28) %>
-            <th><%= @achi.title %></th>
-            <th><%= @achi.explain %></th>
+        <% if MemberAchieve.exists?(member_id: @current_member.id, achievement_id: 38) %>
+            <% @achi = Achievement.find(38) %>
+            <th bgcolor="#C47222"><%= @achi.number %></th>
+            <th bgcolor="#C47222"><%= @achi.title %></th>
+            <th bgcolor="#C47222"><%= @achi.explain %></th>
         <% else %>
-            <th><%= "未達成" %></th>
-            <th><%= "???" %></th>
+            <th>8</th>
+            <th><%= "？？？" %></th>
+            <th><%= "タスクの着手回数が〇〇になる" %></th>
             <% if @taskcount_click >= 7 then %>
-                <th><%= link_to '獲得', achievements_path(:id => 28), :method => :post %></th>
+                <th><%= link_to '獲得', achievements_path(:id => 38), :method => :post %></th>
             <% end %>
         <% end %>
       </tr>
 
       <tr>
-        <th>9</th>
-        <% if MemberAchieve.exists?(member_id: @current_member.id, achievement_id: 29) %>
-            <% @achi = Achievement.find(29) %>
-            <th><%= @achi.title %></th>
-            <th><%= @achi.explain %></th>
+        <% if MemberAchieve.exists?(member_id: @current_member.id, achievement_id: 39) %>
+            <% @achi = Achievement.find(39) %>
+            <th bgcolor="#C0C0C0"><%= @achi.number %></th>
+            <th bgcolor="#C0C0C0"><%= @achi.title %></th>
+            <th bgcolor="#C0C0C0"><%= @achi.explain %></th>
         <% else %>
-            <th><%= "未達成" %></th>
-            <th><%= "???" %></th>
-            <% if @lowscore_click <= 15 then %>
-                <th><%= link_to '獲得', achievements_path(:id => 29), :method => :post %></th>
+            <th>9</th>
+            <th><%= "？？？" %></th>
+            <th><%= "タスクの着手回数が〇〇になる" %></th>
+            <% if @taskcount_click >= 15 then %>
+                <th><%= link_to '獲得', achievements_path(:id => 39), :method => :post %></th>
             <% end %>
         <% end %>
       </tr>
 
       <tr>
-        <th>10</th>
-        <% if MemberAchieve.exists?(member_id: @current_member.id, achievement_id: 30) %>
-            <% @achi = Achievement.find(30) %>
-            <th><%= @achi.title %></th>
-            <th><%= @achi.explain %></th>
+        <% if MemberAchieve.exists?(member_id: @current_member.id, achievement_id: 40) %>
+            <% @achi = Achievement.find(40) %>
+            <th bgcolor="#C47222"><%= @achi.number %></th>
+            <th bgcolor="#C47222"><%= @achi.title %></th>
+            <th bgcolor="#C47222"><%= @achi.explain %></th>
         <% else %>
-            <th><%= "未達成" %></th>
-            <th><%= "???" %></th>
-            <% if MemberAchieve.where(member_id: @current_member).count == 10 then %>
-                <th><%= link_to '獲得', achievements_path(:id => 30), :method => :post %></th>
+            <th>10</th>
+            <th><%= "？？？" %></th>
+            <th><%= "タスクで〇〇を取る" %></th>
+            <% if @lowscore_click <= 10 then %>
+                <th><%= link_to '獲得', achievements_path(:id => 40), :method => :post %></th>
             <% end %>
         <% end %>
       </tr>
+
+      <tr>
+        <% if MemberAchieve.exists?(member_id: @current_member.id, achievement_id: 41) %>
+            <% @achi = Achievement.find(41) %>
+            <th bgcolor="#C47222"><%= @achi.number %></th>
+            <th bgcolor="#C47222"><%= @achi.title %></th>
+            <th bgcolor="#C47222"><%= @achi.explain %></th>
+        <% else %>
+            <th>11</th>
+            <th><%= "？？？" %></th>
+            <th><%= "実験期間中に〇〇タスクを行う" %></th>
+            <% if Clickresult.where(member_id: @current_member, created_at: 1.day.ago.all_day).exists?
+               then %>
+                <th><%= link_to '獲得', achievements_path(:id => 41), :method => :post %></th>
+            <% end %>
+        <% end %>
+      </tr>
+
+      <tr>
+        <% if MemberAchieve.exists?(member_id: @current_member.id, achievement_id: 42) %>
+            <% @achi = Achievement.find(42) %>
+            <th bgcolor="#C0C0C0"><%= @achi.number %></th>
+            <th bgcolor="#C0C0C0"><%= @achi.title %></th>
+            <th bgcolor="#C0C0C0"><%= @achi.explain %></th>
+        <% else %>
+            <th>12</th>
+            <th><%= "？？？" %></th>
+            <th><%= "実験期間の〇〇にタスクを行う" %></th>
+            <% if Clickresult.where(member_id: @current_member, created_at: 1.day.ago.all_day).exists? && Clickresult.where(member_id: @current_member, created_at: 2.day.ago.all_day).exists? && Clickresult.exists?(member_id: @current_member, created_at: Date.today.all_day) then %>
+                <th><%= link_to '獲得', achievements_path(:id => 42), :method => :post %></th>
+            <% end %>
+        <% end %>
+      </tr>
+
+      <tr>
+        <% if MemberAchieve.exists?(member_id: @current_member.id, achievement_id: 43) %>
+            <% @achi = Achievement.find(43) %>
+            <th bgcolor="#ffd700"><%= @achi.number %></th>
+            <th bgcolor="#ffd700"><%= @achi.title %></th>
+            <th bgcolor="#ffd700"><%= @achi.explain %></th>
+        <% else %>
+            <th>13</th>
+            <th><%= "？？？" %></th>
+            <th><%= "実験期間中に〇〇タスクを行う" %></th>
+            <% if Clickresult.where(member_id: @current_member, created_at: 1.day.ago.all_day).exists? && Clickresult.where(member_id: @current_member, created_at: 2.day.ago.all_day).exists? && Clickresult.where(member_id: @current_member, created_at: 3.day.ago.all_day).exists? && Clickresult.where(member_id: @current_member, created_at: 4.day.ago.all_day).exists? && Clickresult.exists?(member_id: @current_member, created_at: Date.today.all_day) then %>
+                <th><%= link_to '獲得', achievements_path(:id => 43), :method => :post %></th>
+            <% end %>
+        <% end %>
+      </tr>
+
+      <tr>
+        <% if MemberAchieve.exists?(member_id: @current_member.id, achievement_id: 44) %>
+            <% @achi = Achievement.find(44) %>
+            <th bgcolor="#C0C0C0"><%= @achi.number %></th>
+            <th bgcolor="#C0C0C0"><%= @achi.title %></th>
+            <th bgcolor="#C0C0C0"><%= @achi.explain %></th>
+        <% else %>
+            <th>14</th>
+            <th><%= "？？？" %></th>
+            <th><%= "？？？" %></th>
+            <% if MemberAchieve.where(member_id: @current_member).count == 9 then %>
+                <th><%= link_to '獲得', achievements_path(:id => 44), :method => :post %></th>
+            <% end %>
+        <% end %>
+      </tr>
+
+      <tr>
+        <% if MemberAchieve.exists?(member_id: @current_member.id, achievement_id: 45) %>
+            <% @achi = Achievement.find(45) %>
+            <th bgcolor="#ffd700"><%= @achi.number %></th>
+            <th bgcolor="#ffd700"><%= @achi.title %></th>
+            <th bgcolor="#ffd700"><%= @achi.explain %></th>
+        <% else %>
+            <th>15</th>
+            <th><%= "？？？" %></th>
+            <th><%= "？？？" %></th>
+            <% if MemberAchieve.where(member_id: @current_member).count == 14 then %>
+                <th><%= link_to '獲得', achievements_path(:id => 45), :method => :post %></th>
+            <% end %>
+        <% end %>
+      </tr>
+
       </tbody>
     </table>
     <br>
     <br>
     <h3>実績 説明</h3>
-    あなたの行ったタスクの得点や、その合計値など、<br>
-    タスクの結果に応じて特定の条件を達成した時に「実績の取得」ができます。<br>
-    達成している場合には、”獲得”のリンクが表示されますので、そちらをクリックしてください。<br>
+    実績 のフィードバックでは、あなたの行ったタスクの得点やその合計値などが<br>
+    あらかじめ設定されている条件を達成した時に、実績と呼ばれる仮想的報酬が得られます。<br>
+    （いわゆる”トロフィー”や”メダル”などと同じです。）<br>
+    実績の条件を達成している場合には”獲得”のリンクが表示されますので、<br>
+    そちらをクリックすることで実績を獲得する事が出来ます。<br>
+    <br>
+    また、実績はその取得難易度に応じて<br>
+    <p><span style = "background-color:#C47222">ブロンズランク</span></p>
+    <p><span style = "background-color:#C0C0C0">シルバーランク</span></p>
+    <p><span style = "background-color:#ffd700">ゴールドランク</span></p>
+    <p>と、ランク分けをしています。</p>
+
 <% else %>
     <p>タスクを一度行う事で、実績を確認できるようになります。</p>
 <% end %>
