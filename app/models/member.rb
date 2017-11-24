@@ -36,11 +36,11 @@ class Member < ApplicationRecord
 
   def self.csv_column_names
     ["ID", "fullname", "name", "email", "gender", "birtyday", "passname",
-     "tasktype", "gametype", "membertype"]
+     "tasktype", "gametype", "membertype","create"]
   end
 
   def csv_column_values
-    [id, fullname, name, email, gender, birthday, passname, tasktype, gametype, membertype]
+    [id, fullname, name, email, gender, birthday, passname, tasktype, gametype, membertype, created_at]
   end
 
 end

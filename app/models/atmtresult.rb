@@ -11,10 +11,10 @@ class Atmtresult < ApplicationRecord
   end
 
   def self.csv_column_names
-    ['member_id', 'TaskResult']
+    ['member_id', 'TaskResult', 'create']
   end
 
   def csv_column_values
-    [member_id, atmtTaskResult]
+    [member_id, atmtTaskResult, created_at]
   end
 end

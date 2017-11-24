@@ -11,10 +11,10 @@ class Clickresult < ApplicationRecord
   end
 
   def self.csv_column_names
-    ['member_id', 'TaskResult']
+    ['member_id', 'TaskResult', 'create']
   end
 
   def csv_column_values
-    [member_id, clickTaskResult]
+    [member_id, clickTaskResult, created_at]
   end
 end
