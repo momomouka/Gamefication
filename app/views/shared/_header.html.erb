@@ -4,7 +4,7 @@
   <% if logged_in? %>
       <%= menu_link_to "マイページ", :account %> &nbsp;|&nbsp;
       <% case @current_member.tasktype %>
-  <% when 0 then %>
+  <% when 0 , 5 , 6 , 7  then %>
           <%= menu_link_to "実験タスク", '/tasks/index' %> &nbsp;|&nbsp;
       <% when 1 then %>
           <%= menu_link_to "実験タスク", 'atmtresults/index' %> &nbsp;|&nbsp;

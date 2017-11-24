@@ -2,33 +2,51 @@
   <dictionary name="KAIHO">
     <words>
       <w>achi</w>
+      <w>alledit</w>
+      <w>alledits</w>
+      <w>allupdate</w>
       <w>atmt</w>
+      <w>atmtcsv</w>
       <w>atmtresult</w>
       <w>atmtresults</w>
+      <w>atmts</w>
       <w>atmtscore</w>
       <w>atmtsum</w>
+      <w>clickcsv</w>
       <w>clickresult</w>
       <w>clickresults</w>
       <w>clickscore</w>
       <w>clicksum</w>
+      <w>csvs</w>
+      <w>editmember</w>
       <w>fullname</w>
+      <w>gamea</w>
       <w>gametype</w>
       <w>gmail</w>
       <w>highscore</w>
       <w>kaiho</w>
       <w>lowscore</w>
+      <w>mathcsv</w>
       <w>mathresult</w>
       <w>mathresults</w>
       <w>mathscore</w>
       <w>mathsum</w>
+      <w>membercsv</w>
       <w>membertype</w>
       <w>mobileuser</w>
       <w>okalab</w>
       <w>pagemove</w>
       <w>passname</w>
+      <w>questiona</w>
+      <w>questionc</w>
+      <w>questionm</w>
       <w>sumscore</w>
       <w>sumscores</w>
+      <w>tasc</w>
+      <w>taska</w>
+      <w>taskc</w>
       <w>taskcount</w>
+      <w>taskm</w>
       <w>taskresult</w>
       <w>tasktype</w>
       <w>topscore</w>

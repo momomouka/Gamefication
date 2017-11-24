@@ -40,3 +40,22 @@
 <p>会員情報がありません。</p>
 <% end %>
 
+
+<br>
+<br>
+<p><%= link_to 'Member出力',alledits_member_path(format: 'csv') %></p>
+<p><%= link_to 'ATMT出力',alledits_atmt_path(format: 'csv') %></p>
+<p><%= link_to 'MATH出力',alledits_math_path(format: 'csv') %></p>
+<p><%= link_to 'CLICK出力',alledits_click_path(format: 'csv') %></p>
+<br>
+<h3>必殺技</h3>
+
+    <p><%= link_to 'ATMT', alledits_taska_path, :method => :put %></p>
+    <p><%= link_to 'MATH', alledits_taskm_path, :method => :put %></p>
+    <p><%= link_to 'CLICK', alledits_taskc_path, :method => :put %></p>
+    <br>
+    <p><%= link_to 'ランキング', alledits_gamer_path, :method => :put %></p>
+    <p><%= link_to '実績', alledits_gamea_path, :method => :put %></p>
+    <br>
+    <p><%= link_to 'ALL', alledits_all_path, :method => :put %></p>
+    <p><%= link_to 'NOT', alledits_not_path, :method => :put %></p>

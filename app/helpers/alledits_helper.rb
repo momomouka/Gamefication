@@ -1,0 +1,2 @@
+module AlleditsHelper
+end

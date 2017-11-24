@@ -1,5 +1,4 @@
-class Mathresult < ApplicationRecord
-  belongs_to :member
+class Alledit < ApplicationRecord
 
   def self.to_csv
     CSV.generate(encoding: Encoding::SJIS, row_sep: "\r\n", force_quotes: true) do |csv|
@@ -11,10 +10,12 @@ class Mathresult < ApplicationRecord
   end
 
   def self.csv_column_names
-    ['member_id', 'TaskResult']
+    ["ID", "fullname", "name", "email", "gender", "birtyday", "passname",
+     "tasktype", "gametype", "membertype"]
   end
 
   def csv_column_values
-    [member_id, mathTaskResult]
+    [id, fullname, name, email, gender, birthday, passname, tasktype, gametype, membertype]
   end
+
 end

@@ -10,12 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171116053409) do
+ActiveRecord::Schema.define(version: 20171124042558) do
 
   create_table "achievements", force: :cascade do |t|
     t.integer "number"
     t.text "title"
     t.text "explain"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "alledits", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -36,6 +41,11 @@ ActiveRecord::Schema.define(version: 20171116053409) do
     t.datetime "updated_at", null: false
     t.index ["member_id", "created_at"], name: "index_clickresults_on_member_id_and_created_at"
     t.index ["member_id"], name: "index_clickresults_on_member_id"
+  end
+
+  create_table "csvs", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "mathresults", force: :cascade do |t|

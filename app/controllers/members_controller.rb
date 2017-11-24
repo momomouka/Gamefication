@@ -2,12 +2,17 @@ class MembersController < ApplicationController
 
   def index
     @members = Member.order(params[:id])
+
+    respond_to do |format|
+      format.html
+      format.csv { send_data @members.to_csv , type: 'text/csv; charset=shift_jis'}
+    end
   end
 
   def show
     @member = Member.find(params[:id])
 
-    unless @current_member.administrator = true
+    unless @current_member.administrator == true
       redirect_to root_path
 
     end
@@ -36,7 +41,7 @@ class MembersController < ApplicationController
     @member = Member.find(params[:id])
     @member.update_attributes(params[:member])
     if @member.save!
-      redirect_to @member, notice: "会員情報を更新しました。"
+      redirect_to '/members', notice: "会員情報を更新しました。"
     else
       render "edit"
     end
@@ -57,5 +62,8 @@ class MembersController < ApplicationController
   def user_params
     params.require(:member).permit(:name, :email, :password, :password_confirmation)
   end
+
+
+
 
 end

@@ -1,0 +1,17 @@
+<% if mobileuser == 1 %>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+<% end %>
+
+<% if @current_member.administrator == true %>
+
+    <p><%= link_to 'ATMT', alledits_taska_path, :method => :put %></p>
+    <p><%= link_to 'MATH', alledits_taskm_path, :method => :put %></p>
+    <p><%= link_to 'CLICK', alledits_taskc_path, :method => :put %></p>
+<br>
+    <p><%= link_to 'ランキング', alledits_gamer_path, :method => :put %></p>
+    <p><%= link_to '実績', alledits_gamea_path, :method => :put %></p>
+<br>
+    <p><%= link_to 'ALL', alledits_all_path, :method => :put %></p>
+    <p><%= link_to 'NOT', alledits_not_path, :method => :put %></p>
+
+<% end %>

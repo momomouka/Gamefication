@@ -19,9 +19,9 @@ Rails.application.routes.draw do
 
   get 'feedback/show'
 
-  get    '/login',   to: 'sessions#new'
-  post   '/login',   to: 'sessions#create'
-  delete '/logout',  to: 'sessions#destroy'
+  get '/login', to: 'sessions#new'
+  post '/login', to: 'sessions#create'
+  delete '/logout', to: 'sessions#destroy'
 
   get 'tasks/index'
   get 'rankings/index'
@@ -30,21 +30,34 @@ Rails.application.routes.draw do
   get 'rankings/click'
 
 
-	root to: "top#index"
+  root to: "top#index"
   get 'top/about'
 
   resources :members do
-  	collection { get "search" }
+    collection {get "search"}
   end
+  put 'members/allupdate'
+  get 'members/alledit'
 
   resource :account, only: [:show, :edit, :update]
   resource :sumscores, only: [:show, :new, :create, :update]
-	resource :achievements, only: [:show, :new, :create]
+  resource :achievements, only: [:show, :new, :create]
   get 'achievements/atmt'
   get 'achievements/math'
   get 'achievements/click'
 
   resource :questions, only: [:new, :create]
-
+  resource :alledits, only: [:show]
+  put 'alledits/taska'
+  put 'alledits/taskm'
+  put 'alledits/taskc'
+  put 'alledits/gamer'
+  put 'alledits/gamea'
+  put 'alledits/all'
+  put 'alledits/not'
+  get 'alledits/member'
+  get 'alledits/atmt'
+  get 'alledits/math'
+  get 'alledits/click'
 
 end
