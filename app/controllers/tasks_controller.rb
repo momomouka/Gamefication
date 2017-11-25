@@ -13,7 +13,7 @@ class TasksController < ApplicationController
 		@id = params[:id]
 		case @current_member.tasktype
 			when 1 then
-				redirect_to '/atmtresult/index'
+				redirect_to '/atmtresults/index'
 			when 2 then
 				redirect_to '/mathresults/index'
 			when 3 then
