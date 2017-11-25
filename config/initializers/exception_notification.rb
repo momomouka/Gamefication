@@ -18,7 +18,7 @@ ExceptionNotification.configure do |config|
   config.add_notifier :email, {
     email_prefix:         "[ERROR_MODE] ",
     sender_address:       %{"Error Notification" <dev@example.com>},
-    exception_recipients: %w{aiho.okalab2017@gmail.com}
+    exception_recipients: %w{kaiho.okalab2017@gmail.com}
   }
 
 end
