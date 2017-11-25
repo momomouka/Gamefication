@@ -20,7 +20,7 @@
   <% topscore = 10000000 %>
   <% count = 1 %>
   <% @rank_atmt.each do |rank| %>
-      <% member = Member.find_by(id: rank.member_id) %>
+      <% member = Member.find_by(id: rank.id) %>
       <% if topscore > rank.atmt %>
           <% grade += count %>
           <% topscore = rank.atmt %>
@@ -44,7 +44,7 @@
       <td align="center"><%= grade %></td>
       <td align="center"><%= member.name %></td>
       <td align="center"><%= rank.atmt %></td>
-      <% @highscore_atmt = Atmtresult.where(member_id: rank.member_id).maximum('atmtTaskResult') %>
+      <% @highscore_atmt = Atmtresult.where(member_id: rank.id).maximum('atmtTaskResult') %>
       <td align="center"><%= @highscore_atmt %></td>
       </tr>
   <% end %>

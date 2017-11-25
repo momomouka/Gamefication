@@ -73,19 +73,13 @@ ActiveRecord::Schema.define(version: 20171124042558) do
     t.integer "tasktype", default: 0, null: false
     t.integer "gametype", default: 0, null: false
     t.integer "membertype", default: 0, null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "sumscores", force: :cascade do |t|
-    t.integer "member_id"
     t.integer "atmt", default: 0
     t.integer "math", default: 0
     t.integer "click", default: 0
+    t.integer "ranking", default: 0
+    t.integer "achievement", default: 0
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["member_id", "created_at"], name: "index_sumscores_on_member_id_and_created_at"
-    t.index ["member_id"], name: "index_sumscores_on_member_id"
   end
 
   create_table "taskresults", force: :cascade do |t|

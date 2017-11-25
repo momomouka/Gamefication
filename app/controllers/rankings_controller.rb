@@ -20,15 +20,27 @@ class RankingsController < ApplicationController
   end
 
   def atmt
-    @rank_atmt = Sumscore.order("atmt desc").where.not(atmt: 0)
+    @member = Member.find(@current_member.id)
+    @count = @member.ranking + 1
+    @member = Member.find(@current_member.id).update!(ranking: @count)
+
+    @rank_atmt = Member.where(tasktype: 1).or(Member.where(tasktype: 4)).order("atmt desc").where.not(atmt: 0)
   end
 
   def math
-    @rank_math = Sumscore.order("math desc").where.not(math: 0)
+    @member = Member.find(@current_member.id)
+    @count = @member.ranking + 1
+    @member = Member.find(@current_member.id).update!(ranking: @count)
+
+    @rank_math = Member.where(tasktype: 2).or(Member.where(tasktype: 4)).order("math desc").where.not(math: 0)
   end
 
   def click
-    @rank_click = Sumscore.order("click desc").where.not(click: 0)
+    @member = Member.find(@current_member.id)
+    @count = @member.ranking + 1
+    @member = Member.find(@current_member.id).update!(ranking: @count)
+
+    @rank_click = Member.where(tasktype: 3).or(Member.where(tasktype: 4)).order("click desc").where.not(click: 0)
   end
 
 end

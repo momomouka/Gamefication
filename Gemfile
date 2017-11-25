@@ -69,3 +69,5 @@ end
   gem 'pry-rails'
   gem 'pry-byebug'
   gem 'pry-doc'
+
+gem 'exception_notification'

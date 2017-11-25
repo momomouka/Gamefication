@@ -20,7 +20,7 @@
   <% topscore = 10000000 %>
   <% count = 1 %>
   <% @rank_math.each do |rank| %>
-      <% member = Member.find_by(id: rank.member_id) %>
+      <% member = Member.find_by(id: rank.id) %>
       <% if topscore > rank.math %>
           <% grade += count %>
           <% topscore = rank.math %>
@@ -44,7 +44,7 @@
         <td align="center"><%= grade %></td>
         <td align="center"><%= member.name %></td>
         <td align="center"><%= rank.math %></td>
-        <% @highscore_math = Mathresult.where(member_id: rank.member_id).maximum('mathTaskResult') %>
+        <% @highscore_math = Mathresult.where(member_id: rank.id).maximum('mathTaskResult') %>
         <td align="center"><%= @highscore_math %></td>
       </tr>
   <% end %>

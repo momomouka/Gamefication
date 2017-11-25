@@ -4,8 +4,4 @@
 <% end %>
 
 
-<% if Sumscore.exists?(member_id:@current_member) %>
     <%= link_to 'こちらをクリックしてください', '/sumscores',method: :put %>
-<% else %>
-    <%= link_to 'こちらをクリックしてください', '/sumscores',method: :post %>
-<% end %>

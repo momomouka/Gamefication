@@ -41,7 +41,7 @@ class AlleditsController < ApplicationController
 
   def not
     @members = Member.all
-    @members.update_all(tasktype: 4 , gametype: 4)
+    @members.update_all(tasktype: 0, gametype: 0)
     redirect_to '/members'
   end
 

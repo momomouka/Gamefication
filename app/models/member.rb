@@ -22,8 +22,6 @@ class Member < ApplicationRecord
   has_many :clickresults, dependent: :destroy
   has_many :member_achieves, through: :member_achieves
   has_one :taskresult, dependent: :destroy
-  has_one :sumscore, dependent: :destroy
-  has_one :question, dependent: :destroy
 
   def self.to_csv
     CSV.generate(encoding: Encoding::SJIS, row_sep: "\r\n", force_quotes: true) do |csv|

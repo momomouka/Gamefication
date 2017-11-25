@@ -20,25 +20,37 @@ class AchievementsController < ApplicationController
   end
 
   def atmt
+    @member = Member.find(@current_member.id)
+    @count = @member.achievement + 1
+    @member = Member.find(@current_member.id).update!(achievement: @count)
+
     @highscore_atmt = Atmtresult.where(member_id: @current_member).maximum('atmtTaskResult')
     @lowscore_atmt = Atmtresult.where(member_id: @current_member).minimum('atmtTaskResult')
     @taskcount_atmt = Atmtresult.where(member_id: @current_member).count
-    @sumscore = Sumscore.find_by_member_id(@current_member.id)
+    @sumscore = Member.find(@current_member.id)
   end
 
   def math
+    @member = Member.find(@current_member.id)
+    @count = @member.achievement + 1
+    @member = Member.find(@current_member.id).update!(achievement: @count)
+
     @highscore_math = Mathresult.where(member_id: @current_member).maximum('mathTaskResult')
     @lowscore_math = Mathresult.where(member_id: @current_member).minimum('mathTaskResult')
     @taskcount_math = Mathresult.where(member_id: @current_member).count
-    @sumscore = Sumscore.find_by_member_id(@current_member.id)
+    @sumscore = Member.find(@current_member.id)
 
   end
 
   def click
+    @member = Member.find(@current_member.id)
+    @count = @member.achievement + 1
+    @member = Member.find(@current_member.id).update!(achievement: @count)
+
     @highscore_click = Clickresult.where(member_id: @current_member).maximum('clickTaskResult')
     @lowscore_click = Clickresult.where(member_id: @current_member).minimum('clickTaskResult')
     @taskcount_click = Clickresult.where(member_id: @current_member).count
-    @sumscore = Sumscore.find_by_member_id(@current_member.id)
+    @sumscore = Member.find(@current_member.id)
   end
 
   def new

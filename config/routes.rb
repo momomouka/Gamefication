@@ -40,7 +40,7 @@ Rails.application.routes.draw do
   get 'members/alledit'
 
   resource :account, only: [:show, :edit, :update]
-  resource :sumscores, only: [:show, :new, :create, :update]
+  resource :sumscores, only: [:show, :new, :update]
   resource :achievements, only: [:show, :new, :create]
   get 'achievements/atmt'
   get 'achievements/math'

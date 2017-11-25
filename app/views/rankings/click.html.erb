@@ -20,7 +20,7 @@
   <% topscore = 10000000 %>
   <% count = 1 %>
   <% @rank_click.each do |rank| %>
-      <% member = Member.find_by(id: rank.member_id) %>
+      <% member = Member.find_by(id: rank.id) %>
       <% if topscore > rank.click %>
           <% grade += count %>
           <% topscore = rank.click %>
@@ -44,7 +44,7 @@
       <td align="center"><%= grade %></td>
       <td align="center"><%= member.name %></td>
       <td align="center"><%= rank.click %></td>
-      <% @highscore_click = Clickresult.where(member_id: rank.member_id).maximum('clickTaskResult') %>
+      <% @highscore_click = Clickresult.where(member_id: rank.id).maximum('clickTaskResult') %>
       <td align="center"><%= @highscore_click %></td>
       </tr>
   <% end %>
