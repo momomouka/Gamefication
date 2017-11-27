@@ -4,7 +4,8 @@ ja:
       member: 被験者情報
     attributes:
       member:
-        name: 氏名
+        fullname: 氏名
+        name: ニックネーム
         gender: 性別
         gender_0: 男
         gender_1: 女
