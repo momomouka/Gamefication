@@ -188,7 +188,7 @@
             <th>11</th>
             <th><%= "？？？" %></th>
             <th><%= "実験期間中に〇〇タスクを行う" %></th>
-            <% if Mathresult.where(member_id: @current_member, created_at: 1.day.ago.all_day).exists?
+            <% if Mathresult.where(member_id: @current_member, created_at: 1.day.ago.all_day).exists? && Atmtresult.exists?(member_id: @current_member, created_at: Date.today.all_day)
                then %>
                 <th><%= link_to '獲得', achievements_path(:id => 26), :method => :post %></th>
             <% end %>
@@ -205,7 +205,7 @@
             <th>12</th>
             <th><%= "？？？" %></th>
             <th><%= "実験期間の〇〇にタスクを行う" %></th>
-            <% if Mathresult.where(member_id: @current_member, created_at: 1.day.ago.all_day).exists? && Mathresult.where(member_id: @current_member, created_at: 2.day.ago.all_day).exists? && Mathresult.exists?(member_id: @current_member, created_at: Date.today.all_day) then %>
+            <% if Mathresult.where(member_id: @current_member, created_at: 1.day.ago.all_day).exists? && Mathresult.exists?(member_id: @current_member, created_at: Date.today.all_day) then %>
                 <th><%= link_to '獲得', achievements_path(:id => 27), :method => :post %></th>
             <% end %>
         <% end %>
@@ -221,7 +221,7 @@
             <th>13</th>
             <th><%= "？？？" %></th>
             <th><%= "実験期間中に〇〇タスクを行う" %></th>
-            <% if Mathresult.where(member_id: @current_member, created_at: 1.day.ago.all_day).exists? && Mathresult.where(member_id: @current_member, created_at: 2.day.ago.all_day).exists? && Mathresult.where(member_id: @current_member, created_at: 3.day.ago.all_day).exists? && Mathresult.where(member_id: @current_member, created_at: 4.day.ago.all_day).exists? && Mathresult.exists?(member_id: @current_member, created_at: Date.today.all_day) then %>
+            <% if Mathresult.where(member_id: @current_member, created_at: 1.day.ago.all_day).exists? && Mathresult.where(member_id: @current_member, created_at: 2.day.ago.all_day).exists? && Mathresult.exists?(member_id: @current_member, created_at: Date.today.all_day) then %>
                 <th><%= link_to '獲得', achievements_path(:id => 28), :method => :post %></th>
             <% end %>
         <% end %>

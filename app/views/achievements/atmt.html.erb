@@ -189,7 +189,7 @@
             <th>11</th>
             <th><%= "？？？" %></th>
             <th><%= "実験期間中に〇〇タスクを行う" %></th>
-            <% if Atmtresult.where(member_id: @current_member, created_at: 1.day.ago.all_day).exists?
+            <% if Atmtresult.where(member_id: @current_member, created_at: 1.day.ago.all_day).exists? && Atmtresult.exists?(member_id: @current_member, created_at: Date.today.all_day)
                then %>
                 <th><%= link_to '獲得', achievements_path(:id => 11), :method => :post %></th>
             <% end %>
@@ -199,14 +199,14 @@
       <tr>
         <% if MemberAchieve.exists?(member_id: @current_member.id, achievement_id: 12) %>
             <% @achi = Achievement.find(12) %>
-            <th bgcolor="#C47222"><%= @achi.number %></th>
-            <th bgcolor="#C47222"><%= @achi.title %></th>
-            <th bgcolor="#C47222"><%= @achi.explain %></th>
+            <th bgcolor="#C0C0C0"><%= @achi.number %></th>
+            <th bgcolor="#C0C0C0"><%= @achi.title %></th>
+            <th bgcolor="#C0C0C0"><%= @achi.explain %></th>
         <% else %>
             <th>12</th>
             <th><%= "？？？" %></th>
             <th><%= "実験期間の〇〇にタスクを行う" %></th>
-            <% if Atmtresult.where(member_id: @current_member, created_at: 1.day.ago.all_day).exists? && Atmtresult.where(member_id: @current_member, created_at: 2.day.ago.all_day).exists? && Atmtresult.exists?(member_id: @current_member, created_at: Date.today.all_day) then %>
+            <% if Atmtresult.where(member_id: @current_member, created_at: 1.day.ago.all_day).exists? && Atmtresult.exists?(member_id: @current_member, created_at: Date.today.all_day) then %>
                 <th><%= link_to '獲得', achievements_path(:id => 12), :method => :post %></th>
             <% end %>
         <% end %>
@@ -215,14 +215,14 @@
       <tr>
         <% if MemberAchieve.exists?(member_id: @current_member.id, achievement_id: 13) %>
             <% @achi = Achievement.find(13) %>
-            <th bgcolor="#C47222"><%= @achi.number %></th>
-            <th bgcolor="#C47222"><%= @achi.title %></th>
-            <th bgcolor="#C47222"><%= @achi.explain %></th>
+            <th bgcolor="#ffd700"><%= @achi.number %></th>
+            <th bgcolor="#ffd700"><%= @achi.title %></th>
+            <th bgcolor="#ffd700"><%= @achi.explain %></th>
         <% else %>
             <th>13</th>
             <th><%= "？？？" %></th>
             <th><%= "実験期間中に〇〇タスクを行う" %></th>
-            <% if Atmtresult.where(member_id: @current_member, created_at: 1.day.ago.all_day).exists? && Atmtresult.where(member_id: @current_member, created_at: 2.day.ago.all_day).exists? && Atmtresult.where(member_id: @current_member, created_at: 3.day.ago.all_day).exists? && Atmtresult.where(member_id: @current_member, created_at: 4.day.ago.all_day).exists? && Atmtresult.exists?(member_id: @current_member, created_at: Date.today.all_day) then %>
+            <% if Atmtresult.where(member_id: @current_member, created_at: 1.day.ago.all_day).exists? && Atmtresult.where(member_id: @current_member, created_at: 2.day.ago.all_day).exists? && Atmtresult.exists?(member_id: @current_member, created_at: Date.today.all_day) then %>
                 <th><%= link_to '獲得', achievements_path(:id => 13), :method => :post %></th>
             <% end %>
         <% end %>
@@ -231,9 +231,9 @@
       <tr>
         <% if MemberAchieve.exists?(member_id: @current_member.id, achievement_id: 14) %>
             <% @achi = Achievement.find(14) %>
-            <th bgcolor="#C47222"><%= @achi.number %></th>
-            <th bgcolor="#C47222"><%= @achi.title %></th>
-            <th bgcolor="#C47222"><%= @achi.explain %></th>
+            <th bgcolor="#C0C0C0"><%= @achi.number %></th>
+            <th bgcolor="#C0C0C0"><%= @achi.title %></th>
+            <th bgcolor="#C0C0C0"><%= @achi.explain %></th>
         <% else %>
             <th>14</th>
             <th><%= "？？？" %></th>
@@ -247,9 +247,9 @@
       <tr>
         <% if MemberAchieve.exists?(member_id: @current_member.id, achievement_id: 15) %>
             <% @achi = Achievement.find(15) %>
-            <th bgcolor="#C47222"><%= @achi.number %></th>
-            <th bgcolor="#C47222"><%= @achi.title %></th>
-            <th bgcolor="#C47222"><%= @achi.explain %></th>
+            <th bgcolor="#ffd700"><%= @achi.number %></th>
+            <th bgcolor="#ffd700"><%= @achi.title %></th>
+            <th bgcolor="#ffd700"><%= @achi.explain %></th>
         <% else %>
             <th>15</th>
             <th><%= "？？？" %></th>
