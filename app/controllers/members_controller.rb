@@ -1,7 +1,7 @@
 class MembersController < ApplicationController
 
   def index
-    @members = Member.order(params[:id])
+    @members = Member.order(:id)
 
     respond_to do |format|
       format.html
