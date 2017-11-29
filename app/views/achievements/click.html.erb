@@ -44,7 +44,7 @@
             <th>2</th>
             <th><%= "？？？" %></th>
             <th><%= "1回のタスクで〇〇を獲得する" %></th>
-            <% if @highscore_click >= 15 then %>
+            <% if @highscore_click >= 60 then %>
                 <th><%= link_to '獲得', achievements_path(:id => 32), :method => :post %></th>
             <% end %>
         <% end %>
@@ -60,7 +60,7 @@
             <th>3</th>
             <th><%= "？？？" %></th>
             <th><%= "1回のタスクで〇〇を獲得する" %></th>
-            <% if @highscore_click >= 20 then %>
+            <% if @highscore_click >= 85 then %>
                 <th><%= link_to '獲得', achievements_path(:id => 33), :method => :post %></th>
             <% end %>
         <% end %>
@@ -76,7 +76,7 @@
             <th>4</th>
             <th><%= "？？？" %></th>
             <th><%= "1回のタスクで〇〇を獲得する" %></th>
-            <% if @highscore_click >= 30 then %>
+            <% if @highscore_click >= 110 then %>
                 <th><%= link_to '獲得', achievements_path(:id => 34), :method => :post %></th>
             <% end %>
         <% end %>
@@ -92,7 +92,7 @@
             <th>5</th>
             <th><%= "？？？" %></th>
             <th><%= "タスク結果の合計が〇〇を超える" %></th>
-            <% if @sumscore.click >= 150 then %>
+            <% if @sumscore.click >= 500 then %>
                 <th><%= link_to '獲得', achievements_path(:id => 35), :method => :post %></th>
             <% end %>
         <% end %>
@@ -108,7 +108,7 @@
             <th>6</th>
             <th><%= "？？？" %></th>
             <th><%= "タスク結果の合計が〇〇を超える" %></th>
-            <% if @sumscore.click >= 300 then %>
+            <% if @sumscore.click >= 1100 then %>
                 <th><%= link_to '獲得', achievements_path(:id => 36), :method => :post %></th>
             <% end %>
         <% end %>
@@ -124,7 +124,7 @@
             <th>7</th>
             <th><%= "？？？" %></th>
             <th><%= "タスク結果の合計が〇〇を超える" %></th>
-            <% if @sumscore.click >= 600 then %>
+            <% if @sumscore.click >= 2200 then %>
                 <th><%= link_to '獲得', achievements_path(:id => 37), :method => :post %></th>
             <% end %>
         <% end %>
@@ -172,7 +172,7 @@
             <th>10</th>
             <th><%= "？？？" %></th>
             <th><%= "タスクで〇〇を取る" %></th>
-            <% if @lowscore_click <= 10 then %>
+            <% if @lowscore_click <= 30 then %>
                 <th><%= link_to '獲得', achievements_path(:id => 40), :method => :post %></th>
             <% end %>
         <% end %>

@@ -1,4 +1,5 @@
 class MembersController < ApplicationController
+  protect_from_forgery
 
   def index
     @members = Member.order(:id)
