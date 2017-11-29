@@ -3,7 +3,7 @@ class AtmtresultsController < ApplicationController
   protect_from_forgery :except => [:game]
 
   def login_check
-    if @current_member.id == nil
+    if @current_member == nil
       flash[:notice] = "各種課題をやる為には、ログインが必要です"
       redirect_to("/login")
     end

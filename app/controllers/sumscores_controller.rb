@@ -2,7 +2,7 @@ class SumscoresController < ApplicationController
 	before_action :login_check
 
 	def login_check
-		if @current_member.id == nil
+		if @current_member == nil
 			flash[:notice] = "このページを開くには、ログインが必要です"
 			redirect_to("/login")
 		end
