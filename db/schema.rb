@@ -76,6 +76,9 @@ ActiveRecord::Schema.define(version: 20171124042558) do
     t.integer "atmt", default: 0
     t.integer "math", default: 0
     t.integer "click", default: 0
+    t.integer "atmtToday", default: 0
+    t.integer "mathToday", default: 0
+    t.integer "clickToday", default: 0
     t.integer "ranking", default: 0
     t.integer "achievement", default: 0
     t.datetime "created_at", null: false

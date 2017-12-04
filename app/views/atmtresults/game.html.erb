@@ -50,7 +50,7 @@
       function newPos() {
         return {
           left: Math.floor(Math.random() * SIZE),
-          top: Math.floor(Math.random() * SIZE) + 40
+          top: Math.floor(Math.random() * SIZE) + 60
         };
       } // ボタンの新しい位置を返す。
 
@@ -58,7 +58,7 @@
         do {
           check = 0;
           newX = Math.floor(Math.random() * SIZE);
-          newY = Math.floor(Math.random() * SIZE) + 40;
+          newY = Math.floor(Math.random() * SIZE) + 60;
           $('.button').each(function () {
             oldX = $(this).offset().left;
             oldY = $(this).offset().top;

@@ -21,24 +21,44 @@ class SumscoresController < ApplicationController
 		@mathresults = Mathresult.where(member_id: @current_member.id).where.not(mathTaskResult: nil)
 		@clickresults = Clickresult.where(member_id: @current_member.id).where.not(clickTaskResult: nil)
 
+		@atmtTodayresults = Atmtresult.where(member_id: @current_member.id, created_at: Date.today.all_day).where.not(atmtTaskResult: nil)
+		@mathTodayresults = Mathresult.where(member_id: @current_member.id, created_at: Date.today.all_day).where.not(mathTaskResult: nil)
+		@clickTodayresults = Clickresult.where(member_id: @current_member.id, created_at: Date.today.all_day).where.not(clickTaskResult: nil)
+
 		$atmtsum = 0
 		$mathsum = 0
 		$clicksum = 0
 
-		@atmtresults.each do |member|
-			$atmtsum += member.atmtTaskResult
+		@atmtresults.each do |result|
+			$atmtsum += result.atmtTaskResult
 		end
 
-		@mathresults.each do |member|
-			$mathsum += member.mathTaskResult
+		@mathresults.each do |result|
+			$mathsum += result.mathTaskResult
 		end
 
-		@clickresults.each do |member|
-			$clicksum += member.clickTaskResult
+		@clickresults.each do |result|
+			$clicksum += result.clickTaskResult
+		end
+
+		$atmtTodaysum = 0
+		$mathTodaysum = 0
+		$clickTodaysum = 0
+
+		@atmtTodayresults.each do |result|
+			$atmtTodaysum += result.atmtTaskResult
+		end
+
+		@mathTodayresults.each do |result|
+			$mathTodaysum += result.mathTaskResult
+		end
+
+		@clickTodayresults.each do |result|
+			$clickTodaysum += result.clickTaskResult
 		end
 
 		@sumscore = Member.find_by(id: @current_member.id)
-		@sumscore.update(atmt:$atmtsum,math:$mathsum,click:$clicksum)
+		@sumscore.update(atmt:$atmtsum,math:$mathsum,click:$clicksum,atmtToday:$atmtTodaysum,mathToday:$mathTodaysum,clickToday:$clickTodaysum)
 		redirect_to '/tasks/index'
 	end
 

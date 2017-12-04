@@ -50,6 +50,8 @@
       <w>taskm</w>
       <w>taskresult</w>
       <w>tasktype</w>
+      <w>todayresults</w>
+      <w>todaysum</w>
       <w>topscore</w>
     </words>
   </dictionary>
