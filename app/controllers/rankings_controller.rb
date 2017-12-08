@@ -26,7 +26,7 @@ class RankingsController < ApplicationController
 
     @rank_atmt = Member.where(tasktype: 1, gametype: 2).or(Member.where(tasktype: 4, gametype: 4)).order("atmt desc").where.not(atmt: 0)
 
-    @rank_atmtToday = Member.where(tasktype: 1, gametype: 2).or(Member.where(tasktype: 4, gametype: 4)).order("atmtToday desc").where.not(atmtToday: 0)
+    @rank_atmttoday = Member.where(tasktype: 1, gametype: 2).or(Member.where(tasktype: 4, gametype: 4)).order("atmttoday desc").where.not(atmttoday: 0)
 
   end
 
@@ -37,7 +37,7 @@ class RankingsController < ApplicationController
 
     @rank_math = Member.where(tasktype: 2, gametype: 2).or(Member.where(tasktype: 4, gametype: 4)).order("math desc").where.not(math: 0)
 
-    @rank_mathToday = Member.where(tasktype: 2, gametype: 2).or(Member.where(tasktype: 4, gametype: 4)).order("mathToday desc").where.not(mathToday: 0)
+    @rank_mathtoday = Member.where(tasktype: 2, gametype: 2).or(Member.where(tasktype: 4, gametype: 4)).order("mathtoday desc").where.not(mathtoday: 0)
   end
 
   def click
@@ -47,7 +47,7 @@ class RankingsController < ApplicationController
 
     @rank_click = Member.where(tasktype: 3, gametype: 2).or(Member.where(tasktype: 4, gametype: 4)).order("click desc").where.not(click: 0)
 
-    @rank_clickToday = Member.where(tasktype: 3, gametype: 2).or(Member.where(tasktype: 4, gametype: 4)).order("clickToday desc").where.not(clickToday: 0)
+    @rank_clicktoday = Member.where(tasktype: 3, gametype: 2).or(Member.where(tasktype: 4, gametype: 4)).order("clicktoday desc").where.not(clicktoday: 0)
 
   end
 

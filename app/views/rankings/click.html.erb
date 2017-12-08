@@ -92,9 +92,9 @@
       <% end %>
       <td align="center"><%= grade %></td>
       <td align="center"><%= member.name %></td>
-      <td align="center"><%= rank.clickToday %></td>
-      <% @highscore_clickToday = Clickresult.where(member_id: rank.id, created_at: Date.today.all_day).maximum('clickTaskResult') %>
-      <td align="center"><%= @highscore_clickToday %></td>
+      <td align="center"><%= rank.clicktoday %></td>
+      <% @highscore_clicktoday = Clickresult.where(member_id: rank.id, created_at: Date.today.all_day).maximum('clickTaskResult') %>
+      <td align="center"><%= @highscore_clicktoday %></td>
       </tr>
   <% end %>
   </tbody>

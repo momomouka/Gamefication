@@ -12,11 +12,13 @@
       <w>atmts</w>
       <w>atmtscore</w>
       <w>atmtsum</w>
+      <w>atmttoday</w>
       <w>clickcsv</w>
       <w>clickresult</w>
       <w>clickresults</w>
       <w>clickscore</w>
       <w>clicksum</w>
+      <w>clicktoday</w>
       <w>csvs</w>
       <w>editmember</w>
       <w>fullname</w>
@@ -31,6 +33,7 @@
       <w>mathresults</w>
       <w>mathscore</w>
       <w>mathsum</w>
+      <w>mathtoday</w>
       <w>membercsv</w>
       <w>membertype</w>
       <w>mobileuser</w>

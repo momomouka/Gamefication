@@ -21,9 +21,9 @@ class SumscoresController < ApplicationController
 		@mathresults = Mathresult.where(member_id: @current_member.id).where.not(mathTaskResult: nil)
 		@clickresults = Clickresult.where(member_id: @current_member.id).where.not(clickTaskResult: nil)
 
-		@atmtTodayresults = Atmtresult.where(member_id: @current_member.id, created_at: Date.today.all_day).where.not(atmtTaskResult: nil)
-		@mathTodayresults = Mathresult.where(member_id: @current_member.id, created_at: Date.today.all_day).where.not(mathTaskResult: nil)
-		@clickTodayresults = Clickresult.where(member_id: @current_member.id, created_at: Date.today.all_day).where.not(clickTaskResult: nil)
+		@atmttodayresults = Atmtresult.where(member_id: @current_member.id, created_at: Date.today.all_day).where.not(atmtTaskResult: nil)
+		@mathtodayresults = Mathresult.where(member_id: @current_member.id, created_at: Date.today.all_day).where.not(mathTaskResult: nil)
+		@clicktodayresults = Clickresult.where(member_id: @current_member.id, created_at: Date.today.all_day).where.not(clickTaskResult: nil)
 
 		$atmtsum = 0
 		$mathsum = 0
@@ -41,24 +41,24 @@ class SumscoresController < ApplicationController
 			$clicksum += result.clickTaskResult
 		end
 
-		$atmtTodaysum = 0
-		$mathTodaysum = 0
-		$clickTodaysum = 0
+		$atmttodaysum = 0
+		$mathtodaysum = 0
+		$clicktodaysum = 0
 
-		@atmtTodayresults.each do |result|
-			$atmtTodaysum += result.atmtTaskResult
+		@atmttodayresults.each do |result|
+			$atmttodaysum += result.atmtTaskResult
 		end
 
-		@mathTodayresults.each do |result|
-			$mathTodaysum += result.mathTaskResult
+		@mathtodayresults.each do |result|
+			$mathtodaysum += result.mathTaskResult
 		end
 
-		@clickTodayresults.each do |result|
-			$clickTodaysum += result.clickTaskResult
+		@clicktodayresults.each do |result|
+			$clicktodaysum += result.clickTaskResult
 		end
 
 		@sumscore = Member.find_by(id: @current_member.id)
-		@sumscore.update(atmt:$atmtsum,math:$mathsum,click:$clicksum,atmtToday:$atmtTodaysum,mathToday:$mathTodaysum,clickToday:$clickTodaysum)
+		@sumscore.update(atmt:$atmtsum,math:$mathsum,click:$clicksum,atmttoday:$atmttodaysum,mathtoday:$mathtodaysum,clicktoday:$clicktodaysum)
 		redirect_to '/tasks/index'
 	end
 

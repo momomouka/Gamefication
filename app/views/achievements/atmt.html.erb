@@ -268,7 +268,7 @@
         <% else %>
             <th>16</th>
             <th><%= "？？？" %></th>
-            <th><%= "実験期間中に〇〇タスクを行う" %></th>
+            <th><%= "実験期間中〇〇タスクを行う" %></th>
             <% if Atmtresult.where(member_id: @current_member, created_at: 1.day.ago.all_day).exists? && Atmtresult.exists?(member_id: @current_member, created_at: Date.today.all_day)
                then %>
                 <th><%= link_to '獲得', achievements_path(:id => 16), :method => :post %></th>
@@ -285,7 +285,7 @@
         <% else %>
             <th>17</th>
             <th><%= "？？？" %></th>
-            <th><%= "実験期間の〇〇にタスクを行う" %></th>
+            <th><%= "実験期間中〇〇タスクを行う" %></th>
             <% if Atmtresult.where(member_id: @current_member, created_at: 1.day.ago.all_day).exists? && Atmtresult.where(member_id: @current_member, created_at: 2.day.ago.all_day).exists? && Atmtresult.exists?(member_id: @current_member, created_at: Date.today.all_day) then %>
                 <th><%= link_to '獲得', achievements_path(:id => 17), :method => :post %></th>
             <% end %>
@@ -301,7 +301,7 @@
         <% else %>
             <th>18</th>
             <th><%= "？？？" %></th>
-            <th><%= "実験期間中に〇〇タスクを行う" %></th>
+            <th><%= "実験期間中〇〇タスクを行う" %></th>
             <% if Atmtresult.where(member_id: @current_member, created_at: 1.day.ago.all_day).exists? && Atmtresult.where(member_id: @current_member, created_at: 2.day.ago.all_day).exists? && Atmtresult.where(member_id: @current_member, created_at: 3.day.ago.all_day).exists? && Atmtresult.where(member_id: @current_member, created_at: 4.day.ago.all_day).exists? && Atmtresult.exists?(member_id: @current_member, created_at: Date.today.all_day) then %>
                 <th><%= link_to '獲得', achievements_path(:id => 18), :method => :post %></th>
             <% end %>

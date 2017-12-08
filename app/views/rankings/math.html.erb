@@ -68,11 +68,11 @@
   <% grade = 0 %>
   <% topscore = 10000000 %>
   <% count = 1 %>
-  <% @rank_mathToday.each do |rank| %>
+  <% @rank_mathtoday.each do |rank| %>
       <% member = Member.find_by(id: rank.id) %>
-      <% if topscore > rank.mathToday %>
+      <% if topscore > rank.mathtoday %>
           <% grade += count %>
-          <% topscore = rank.mathToday %>
+          <% topscore = rank.mathtoday %>
           <% count = 1 %>
       <% else %>
           <% count += 1 %>
@@ -92,9 +92,9 @@
       <% end %>
       <td align="center"><%= grade %></td>
       <td align="center"><%= member.name %></td>
-      <td align="center"><%= rank.mathToday %></td>
-      <% @highscore_mathToday = Mathresult.where(member_id: rank.id, created_at: Date.today.all_day).maximum('mathTaskResult') %>
-      <td align="center"><%= @highscore_mathToday %></td>
+      <td align="center"><%= rank.mathtoday %></td>
+      <% @highscore_mathtoday = Mathresult.where(member_id: rank.id, created_at: Date.today.all_day).maximum('mathTaskResult') %>
+      <td align="center"><%= @highscore_mathtoday %></td>
       </tr>
   <% end %>
   </tbody>
