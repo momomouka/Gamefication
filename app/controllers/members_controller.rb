@@ -2,7 +2,7 @@ class MembersController < ApplicationController
   protect_from_forgery
 
   def index
-    @members = Member.order(:id)
+    @members = Member.order(:email)
 
     respond_to do |format|
       format.html

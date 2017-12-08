@@ -10,10 +10,10 @@
   <% end %>
 </head>
 <body>
-<h2>ATMT タスク</h2>
+<h2>探索 タスク</h2>
 <p><a id="start" href="javascript:void(0)">スタート</a></p>
 
-<% @page_title = "ATMTタスク" %>
+<% @page_title = "探索タスク" %>
 
 <script>
   $(function () {
@@ -26,7 +26,7 @@
         var buttonNum = 1; //ボタンに数字を割り振る為の（無駄な変数）
         var buttonCount = 1; // ボタンに数字を割り振る為の変数と押したボタンの数管理
         var idname; //押されたボタンをif文判定する為に使う
-        var SIZE = 300; // ステージの大きさ
+        var SIZE = 290; // ステージの大きさ
         var count = 0; // 現在チェックされている数
         var st = new Date().getTime(); // 開始時間
         var t = (new Date().getTime() - st) / 1000;

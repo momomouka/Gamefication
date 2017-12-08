@@ -2,5 +2,26 @@
 <% if mobileuser == 1 %>
     <meta name="viewport" content="width=device-width,initial-scale=1">
 <% end %>
-<p>あなたの今回の実験条件では、フィードバックがありません。</p>
-<p>引き続き、実験協力をお願い致します。</p>
+
+<% case @current_member.tasktype %>
+<% when 0, 5, 6, 7 then %>
+    <% menu_link_to "実験タスク", '/tasks/index' %>
+<% when 1 then %>
+
+    <p>あなたは現在、タスク結果の合計が <b><%= @current_member.atmt %>点</b> で、一回のタスクで得た最高タスク点が
+      <b><%= Atmtresult.where(member_id: @current_member.id).maximum('atmtTaskResult') %>点</b> です。</p>
+    <p>あなたの今回の実験条件では、その他にフィードバックがありません。</p>
+    <p>引き続き、実験協力をお願い致します。</p>
+<% when 2 then %>
+
+    <p>あなたは現在、タスク結果の合計が <b><%= @current_member.math %>点</b> で、一回のタスクで得た最高タスク点が
+      <b><%= Mathresult.where(member_id: @current_member.id).maximum('mathTaskResult') %>点</b> です。</p>
+    <p>あなたの今回の実験条件では、その他にフィードバックがありません。</p>
+    <p>引き続き、実験協力をお願い致します。</p>
+<% when 3 then %>
+
+    <p>あなたは現在、タスク結果の合計が <b><%= @current_member.click %>点</b> で、一回のタスクで得た最高タスク点が
+      <b><%= Clickresult.where(member_id: @current_member.id).maximum('clickTaskResult') %>点</b> です。</p>
+    <p>あなたの今回の実験条件では、その他にフィードバックがありません。</p>
+    <p>引き続き、実験協力をお願い致します。</p>
+<% end %>
