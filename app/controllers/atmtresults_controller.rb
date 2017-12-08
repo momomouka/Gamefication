@@ -1,6 +1,5 @@
 class AtmtresultsController < ApplicationController
   before_action :login_check
-  protect_from_forgery :except => [:game]
 
   def login_check
     if @current_member == nil

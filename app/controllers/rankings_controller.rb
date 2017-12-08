@@ -1,6 +1,7 @@
 class RankingsController < ApplicationController
   before_action :login_check
 
+
   def login_check
     if @current_member == nil
       flash[:notice] = "このページを開くには、ログインが必要です"
