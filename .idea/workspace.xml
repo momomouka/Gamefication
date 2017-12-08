@@ -6,13 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="9b0632ff-67e5-41c0-beb5-91116f8a672c" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/application_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/application_controller.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/atmtresults_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/atmtresults_controller.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/clickresults_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/clickresults_controller.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/mathresults_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/mathresults_controller.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/rankings_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/rankings_controller.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/top_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/top_controller.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/top/about.html.erb" afterPath="$PROJECT_DIR$/app/views/top/about.html.erb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/members/new.html.erb" afterPath="$PROJECT_DIR$/app/views/members/new.html.erb" />
     </list>
     <ignored path="$PROJECT_DIR$/.bundle/" />
     <ignored path="$PROJECT_DIR$/components/" />
@@ -88,11 +82,21 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="top_controller.rb" pinned="false" current-in-tab="true">
+          <file leaf-file-name="top_controller.rb" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/app/controllers/top_controller.rb">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="95">
                   <caret line="5" column="22" lean-forward="true" selection-start-line="5" selection-start-column="22" selection-end-line="5" selection-end-column="22" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="new.html.erb" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/app/views/members/new.html.erb">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="342">
+                  <caret line="17" column="10" lean-forward="true" selection-start-line="17" selection-start-column="10" selection-end-line="17" selection-end-column="10" />
                   <folding />
                 </state>
               </provider>
@@ -103,16 +107,6 @@
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="380">
                   <caret line="20" column="0" lean-forward="true" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="atmtresults_controller.rb" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/app/controllers/atmtresults_controller.rb">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="19">
-                  <caret line="1" column="28" lean-forward="false" selection-start-line="1" selection-start-column="28" selection-end-line="1" selection-end-column="28" />
                   <folding />
                 </state>
               </provider>
@@ -155,7 +149,7 @@
           <file leaf-file-name="about.html.erb" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/app/views/top/about.html.erb">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="653">
+                <state relative-caret-position="1394">
                   <caret line="78" column="66" lean-forward="false" selection-start-line="78" selection-start-column="66" selection-end-line="78" selection-end-column="66" />
                   <folding />
                 </state>
@@ -205,7 +199,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/views/csvs/index.html.erb" />
         <option value="$PROJECT_DIR$/app/views/csvs/membercsv.csv.ruby" />
         <option value="$PROJECT_DIR$/app/models/concerns/csv_exportable.rb" />
         <option value="$PROJECT_DIR$/app/controllers/csvs_controller.rb" />
@@ -256,6 +249,7 @@
         <option value="$PROJECT_DIR$/app/controllers/clickresults_controller.rb" />
         <option value="$PROJECT_DIR$/app/controllers/mathresults_controller.rb" />
         <option value="$PROJECT_DIR$/app/controllers/sessions_controller.rb" />
+        <option value="$PROJECT_DIR$/app/views/members/new.html.erb" />
       </list>
     </option>
   </component>
@@ -351,6 +345,19 @@
               <item name="myapp" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
               <item name="controllers" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="myapp" type="b2602c69:ProjectViewProjectNode" />
+              <item name="myapp" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="myapp" type="b2602c69:ProjectViewProjectNode" />
+              <item name="myapp" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+              <item name="members" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -530,12 +537,12 @@
       <workItem from="1510894161972" duration="15354000" />
       <workItem from="1511070155468" duration="100117000" />
       <workItem from="1512356528660" duration="9808000" />
-      <workItem from="1512531696724" duration="18473000" />
+      <workItem from="1512531696724" duration="19285000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="258096000" />
+    <option name="totallyTimeSpent" value="258908000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -583,13 +590,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/views/sumscores/new.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="114">
-          <caret line="6" column="51" lean-forward="false" selection-start-line="6" selection-start-column="51" selection-end-line="6" selection-end-column="51" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/alledits/show.html.erb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="304">
@@ -841,7 +841,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/top/about.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="653">
+        <state relative-caret-position="1394">
           <caret line="78" column="66" lean-forward="false" selection-start-line="78" selection-start-column="66" selection-end-line="78" selection-end-column="66" />
           <folding />
         </state>
@@ -963,6 +963,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="95">
           <caret line="5" column="22" lean-forward="true" selection-start-line="5" selection-start-column="22" selection-end-line="5" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/members/new.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="342">
+          <caret line="17" column="10" lean-forward="true" selection-start-line="17" selection-start-column="10" selection-end-line="17" selection-end-column="10" />
           <folding />
         </state>
       </provider>
