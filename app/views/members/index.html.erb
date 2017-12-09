@@ -17,7 +17,9 @@
 <table class="list">
   <tr>
     <th>ID</th>
+    <th>NN</th>
     <th>氏名</th>
+    <th>email</th>
     <th>task</th>
     <th>game</th>
     <th>member</th>
@@ -27,6 +29,8 @@
   <tr>
     <td><%= member.id %></td>
     <td><%= link_to member.name, member %></td>
+    <td><%= member.fullname %></td>
+    <td><%= member.email %></td>
     <td><%= member.tasktype %></td>
     <td><%= member.gametype %></td>
     <td><%= member.membertype %></td>
