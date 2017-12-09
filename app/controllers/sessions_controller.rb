@@ -1,5 +1,4 @@
 class SessionsController < ApplicationController
-  protect_from_forgery
 
   def new
     
