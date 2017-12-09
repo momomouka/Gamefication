@@ -68,7 +68,7 @@
   <% grade = 0 %>
   <% topscore = 10000000 %>
   <% count = 1 %>
-  <% @rank_clickToday.each do |rank| %>
+  <% @rank_clicktoday.each do |rank| %>
       <% member = Member.find_by(id: rank.id) %>
       <% if topscore > rank.clickToday %>
           <% grade += count %>
