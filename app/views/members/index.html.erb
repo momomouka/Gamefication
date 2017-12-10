@@ -16,6 +16,7 @@
 <% if @members.present? %>
 <table class="list">
   <tr>
+    <th>No</th>
     <th>ID</th>
     <th>NN</th>
     <th>氏名</th>
@@ -25,8 +26,10 @@
     <th>member</th>
     <th>操作</th>
   </tr>
+  <% number = 1 %>
   <% @members.each do |member| %>
   <tr>
+    <td><%= number %></td>
     <td><%= member.id %></td>
     <td><%= link_to member.name, member %></td>
     <td><%= member.fullname %></td>
@@ -39,6 +42,7 @@
     </td>
     <td><%= member.ranking %> , <%= member.achievement %></td>
   </tr>
+      <% number += 1 %>
   <% end %>
 </table>
 <% else %>
