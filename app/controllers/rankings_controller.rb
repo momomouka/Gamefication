@@ -25,9 +25,9 @@ class RankingsController < ApplicationController
     @count = @member.ranking + 1
     @member = Member.find(@current_member.id).update!(ranking: @count)
 
-    @rank_atmt = Member.where(tasktype: 1, gametype: 2)
+    @rank_atmt = Member.where(tasktype: 1, gametype: 2).order('atmt desc')
 
-    @rank_atmttoday = Member.where(tasktype: 1, gametype: 2)
+    @rank_atmttoday = Member.where(tasktype: 1, gametype: 2).order('atmttoday desc')
 
   end
 
@@ -36,9 +36,9 @@ class RankingsController < ApplicationController
     @count = @member.ranking + 1
     @member = Member.find(@current_member.id).update!(ranking: @count)
 
-    @rank_math = Member.where(tasktype: 2, gametype: 2)
+    @rank_math = Member.where(tasktype: 2, gametype: 2).order('math desc')
 
-    @rank_mathtoday = Member.where(tasktype: 2, gametype: 2)
+    @rank_mathtoday = Member.where(tasktype: 2, gametype: 2).order('mathtoday desc')
   end
 
   def click
@@ -46,9 +46,9 @@ class RankingsController < ApplicationController
     @count = @member.ranking + 1
     @member = Member.find(@current_member.id).update!(ranking: @count)
 
-    @rank_click = Member.where(tasktype: 3, gametype: 2)
+    @rank_click = Member.where(tasktype: 3, gametype: 2).order('click desc')
 
-    @rank_clicktoday = Member.where(tasktype: 3, gametype: 2)
+    @rank_clicktoday = Member.where(tasktype: 3, gametype: 2).order('clicktoday desc')
 
   end
 
