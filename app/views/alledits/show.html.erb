@@ -3,7 +3,8 @@
 <% end %>
 
 <% if @current_member.administrator == true %>
-
+    <p><%= link_to 'TodayScore_Reset', alledits_todayreset_path, :method => :put %></p>
+    <br>
     <p><%= link_to 'ATMT', alledits_taska_path, :method => :put %></p>
     <p><%= link_to 'MATH', alledits_taskm_path, :method => :put %></p>
     <p><%= link_to 'CLICK', alledits_taskc_path, :method => :put %></p>

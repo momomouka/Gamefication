@@ -48,6 +48,7 @@ Rails.application.routes.draw do
 
   resource :questions, only: [:new, :create]
   resource :alledits, only: [:show]
+  put 'alledits/todayreset'
   put 'alledits/taska'
   put 'alledits/taskm'
   put 'alledits/taskc'

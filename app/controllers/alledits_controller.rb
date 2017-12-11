@@ -3,6 +3,12 @@ class AlleditsController < ApplicationController
   def show
   end
 
+  def todayreset
+    @members = Member.all
+    @members.update_all(atmttoday: 0, mathtoday: 0, clicktoday: 0)
+    redirect_to '/members'
+  end
+
   def taska
     @members = Member.all
     @members.update_all(tasktype: 1)
