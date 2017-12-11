@@ -4,13 +4,7 @@
     <bookmark url="file://$PROJECT_DIR$/app/controllers/atmtresults_controller.rb" line="14" mnemonic="2" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9b0632ff-67e5-41c0-beb5-91116f8a672c" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/rankings_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/rankings_controller.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/rankings/atmt.html.erb" afterPath="$PROJECT_DIR$/app/views/rankings/atmt.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/rankings/click.html.erb" afterPath="$PROJECT_DIR$/app/views/rankings/click.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/rankings/math.html.erb" afterPath="$PROJECT_DIR$/app/views/rankings/math.html.erb" />
-    </list>
+    <list default="true" id="9b0632ff-67e5-41c0-beb5-91116f8a672c" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/.bundle/" />
     <ignored path="$PROJECT_DIR$/components/" />
     <ignored path="$PROJECT_DIR$/public/system/" />
@@ -512,12 +506,12 @@
       <workItem from="1510894161972" duration="15354000" />
       <workItem from="1511070155468" duration="100117000" />
       <workItem from="1512356528660" duration="9808000" />
-      <workItem from="1512531696724" duration="27084000" />
+      <workItem from="1512531696724" duration="27184000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="266707000" />
+    <option name="totallyTimeSpent" value="266807000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
