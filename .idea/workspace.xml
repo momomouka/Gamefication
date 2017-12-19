@@ -7,8 +7,6 @@
     <list default="true" id="9b0632ff-67e5-41c0-beb5-91116f8a672c" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/mathresults/game.html.erb" afterPath="$PROJECT_DIR$/app/views/mathresults/game.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/rankings/atmt.html.erb" afterPath="$PROJECT_DIR$/app/views/rankings/atmt.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/top/about.html.erb" afterPath="$PROJECT_DIR$/app/views/top/about.html.erb" />
     </list>
     <ignored path="$PROJECT_DIR$/.bundle/" />
     <ignored path="$PROJECT_DIR$/components/" />
@@ -107,8 +105,8 @@
           <file leaf-file-name="game.html.erb" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/app/views/mathresults/game.html.erb">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="480">
-                  <caret line="91" column="20" lean-forward="true" selection-start-line="91" selection-start-column="20" selection-end-line="91" selection-end-column="20" />
+                <state relative-caret-position="328">
+                  <caret line="71" column="22" lean-forward="false" selection-start-line="71" selection-start-column="22" selection-end-line="71" selection-end-column="22" />
                   <folding />
                 </state>
               </provider>
@@ -574,12 +572,12 @@
       <workItem from="1513057106379" duration="824000" />
       <workItem from="1513064112297" duration="2834000" />
       <workItem from="1513566560019" duration="673000" />
-      <workItem from="1513577319330" duration="2766000" />
+      <workItem from="1513577319330" duration="3527000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="278178000" />
+    <option name="totallyTimeSpent" value="278939000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -592,7 +590,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="1432" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.09808102" sideWeight="0.4937107" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32982087" sideWeight="0.4978678" order="6" side_tool="false" content_ui="tabs" />
@@ -600,7 +597,7 @@
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3296875" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32982087" sideWeight="0.4978678" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.28345627" sideWeight="0.5021322" order="9" side_tool="true" content_ui="tabs" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.28345627" sideWeight="0.5021322" order="9" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.13219616" sideWeight="0.5062893" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.22016461" sideWeight="0.49791667" order="8" side_tool="false" content_ui="tabs" />
@@ -993,8 +990,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/mathresults/game.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
-          <caret line="91" column="20" lean-forward="true" selection-start-line="91" selection-start-column="20" selection-end-line="91" selection-end-column="20" />
+        <state relative-caret-position="328">
+          <caret line="71" column="22" lean-forward="false" selection-start-line="71" selection-start-column="22" selection-end-line="71" selection-end-column="22" />
           <folding />
         </state>
       </provider>
